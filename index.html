@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- 瀏覽器標籤頁標題 -->
-    <title>TheFlyingTree Official Website</title>
+    <title>TheFlyingTree | 9th Anniversary</title>
+    <meta name="description" content="TheFlyingTree 9th Anniversary — ACG piano arrangements, Rolling Sky and Dancing Line." />
+    <link rel="preload" as="image" href="assets/9th-anniversary-hero.png" />
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
@@ -30,13 +32,23 @@
 
          /* 首頁背景 */
         #home {
-            /* 首頁背景圖片 */
-            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://cdn.jsdelivr.net/gh/Dandelion206/TheFlyingTree-Official-Website@main/main_section_bg.png');
-            background-size: cover;           /* 自動縮放填滿，不留白也不裁切過多 */
-            background-position: center center; 
-            background-repeat: no-repeat; 
-            background-attachment: fixed;
-            min-height: 100vh;
+            background-image:
+                linear-gradient(180deg, rgba(3, 25, 54, 0.18) 0%, rgba(3, 25, 54, 0) 48%, rgba(3, 25, 54, 0.32) 100%),
+                url('assets/9th-anniversary-hero.png');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: scroll;
+            min-height: calc(100vh - 140px);
+        }
+
+        #home::after {
+            content: '';
+            position: absolute;
+            inset: auto 0 0;
+            height: 22%;
+            background: linear-gradient(to bottom, transparent, #071827);
+            pointer-events: none;
         }
 
         /* Rolling Sky 區塊背景 */
@@ -74,7 +86,9 @@
         body {
             /* 字體 */
             font-family: 'Quicksand',  'Noto Sans SC', 'Noto Sans JP', 'Noto Sans KR', sans-serif;
-            background-color: #050b14;
+            background:
+                radial-gradient(circle at 50% 0%, rgba(14, 165, 233, 0.16), transparent 36rem),
+                #071827;
             color: #e2e8f0;
             overflow-x: hidden;
         }
@@ -313,6 +327,125 @@
             0%, 100% { transform: translateY(0) rotate(0deg); }
             50% { transform: translateY(-10px) rotate(5deg); }
         }
+
+        .anniversary-panel {
+            width: min(92vw, 620px);
+            padding: 0.85rem 1.15rem 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.48);
+            border-radius: 1.5rem;
+            background: linear-gradient(135deg, rgba(5, 37, 70, 0.18), rgba(8, 83, 126, 0.06));
+            box-shadow: 0 14px 44px rgba(0, 43, 78, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.32);
+            backdrop-filter: none;
+        }
+
+        .anniversary-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+            padding: 0.45rem 0.85rem;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.88);
+            color: #075985;
+            font-weight: 800;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            box-shadow: 0 8px 24px rgba(2, 132, 199, 0.2);
+        }
+
+        .hero-title {
+            color: white;
+            text-shadow: 0 3px 18px rgba(3, 28, 58, 0.65);
+        }
+
+        .hero-subtitle {
+            color: #fde68a;
+            text-shadow: 0 2px 14px rgba(3, 28, 58, 0.55);
+        }
+
+        .hero-button-primary,
+        .hero-button-secondary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.55rem;
+            min-width: 10.5rem;
+            padding: 0.8rem 1.25rem;
+            border-radius: 999px;
+            font-weight: 800;
+            transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+        }
+
+        .hero-button-primary {
+            color: #06344f;
+            background: linear-gradient(135deg, #fef3c7, #f59e0b);
+            box-shadow: 0 10px 30px rgba(245, 158, 11, 0.3);
+        }
+
+        .hero-button-secondary {
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.72);
+            background: rgba(3, 35, 65, 0.36);
+        }
+
+        .hero-button-primary:hover,
+        .hero-button-secondary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 34px rgba(2, 132, 199, 0.28);
+        }
+
+        .hero-actions {
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+        }
+
+        @media (max-width: 768px) {
+            #home {
+                min-height: calc(100svh - 80px);
+                background-position: 37% center;
+            }
+
+            .anniversary-panel {
+                width: calc(100vw - 2rem);
+                padding: 0.65rem 0.75rem 0.75rem;
+                border-radius: 1.15rem;
+                background: linear-gradient(135deg, rgba(5, 37, 70, 0.22), rgba(8, 83, 126, 0.08));
+                backdrop-filter: none;
+            }
+
+            .anniversary-kicker {
+                padding: 0.32rem 0.65rem;
+                font-size: 0.65rem;
+            }
+
+            .hero-title {
+                margin-top: 0.55rem !important;
+                font-size: 1.95rem !important;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem !important;
+            }
+
+            .anniversary-panel > p.lang-text {
+                margin-top: 0.35rem !important;
+                font-size: 0.75rem !important;
+            }
+
+            .hero-actions {
+                display: grid !important;
+                grid-template-columns: 1fr 1fr;
+                gap: 0.5rem;
+                margin-top: 0.65rem !important;
+            }
+
+            .hero-button-primary,
+            .hero-button-secondary {
+                min-width: 0;
+                padding: 0.6rem 0.5rem;
+                font-size: 0.72rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -329,10 +462,13 @@
     <div class="h-20 md:h-[140px]"></div>
 
     <!-- 頂部導航欄 (固定) -->
-    <nav class="fixed top-0 left-0 w-full z-50 bg-slate-900/95 backdrop-blur-md border-b border-slate-700 h-20 flex items-center justify-between px-6">
+    <nav class="fixed top-0 left-0 w-full z-50 bg-sky-950/90 backdrop-blur-xl border-b border-cyan-300/30 h-20 flex items-center justify-between px-6 shadow-lg shadow-sky-950/20">
         <div class="flex items-center">
-                <img src="https://cdn.jsdelivr.net/gh/Dandelion206/TheFlyingTree-Official-Website@main/pfp.jpeg" class="w-10 h-10 rounded-full object-cover border-2 border-cyan-500 mr-3">
-                <span class="font-gaming text-2xl font-bold text-white tracking-wider">TheFlyingTree</span>
+                <img src="https://cdn.jsdelivr.net/gh/Dandelion206/TheFlyingTree-Official-Website@main/pfp.jpeg" alt="TheFlyingTree profile picture" class="w-10 h-10 rounded-full object-cover border-2 border-cyan-300 mr-3 shadow-md shadow-cyan-400/20">
+                <div>
+                    <span class="block font-gaming text-xl md:text-2xl font-bold text-white tracking-wider leading-none">TheFlyingTree</span>
+                    <span class="block mt-1 text-[10px] uppercase tracking-[0.28em] text-amber-300">9th Anniversary</span>
+                </div>
         </div>
         <!-- 手機版按鈕 -->
         <button id="mobile-menu-btn" class="md:hidden text-white focus:outline-none">
@@ -359,7 +495,7 @@
         </div>
 
         <!-- [新增] 手機版下拉選單 -->
-        <div id="mobile-menu" class="w-full md:hidden bg-slate-900 absolute top-20 left-0 border-b border-slate-700 shadow-xl flex flex-col items-center py-4 space-y-4">
+        <div id="mobile-menu" class="w-full md:hidden bg-sky-950/95 backdrop-blur-xl absolute top-20 left-0 border-b border-cyan-300/30 shadow-xl flex flex-col items-center py-4 space-y-4">
             <a href="#home" class="text-gray-300 hover:text-amber-400 font-bold transition w-full text-center py-2 lang-text" data-zh="首頁" data-zh-cn="首页" data-en="Home" data-ja="ホーム" data-ko="홈">首頁</a>
             <a href="#piano-zone" class="text-gray-300 hover:text-blue-400 font-bold transition w-full text-center py-2 lang-text" data-zh="鋼琴專區" data-zh-cn="钢琴专区" data-en="Piano Zone" data-ja="ピアノゾーン" data-ko="피아노 존">鋼琴專區</a>
             <a href="#sheet-music" class="text-gray-300 hover:text-blue-400 font-bold transition w-full text-center py-2 lang-text" data-zh="樂譜" data-zh-cn="乐谱" data-en="Sheet Music" data-ja="楽譜" data-ko="악보">樂譜</a>
@@ -381,41 +517,34 @@
     </nav>
 
     <!-- 首頁封面 -->
-    <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
-        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
-            <div class="mb-4 text-amber-300 text-4xl flex justify-center gap-8 opacity-80">
-                <i class="fas fa-music floating-note" style="animation-delay: 0s;"></i>
-                <i class="fas fa-headphones floating-note" style="animation-delay: 1s;"></i>
-                <i class="fas fa-compact-disc floating-note" style="animation-delay: 0.5s;"></i>
-            </div>
+    <section id="home" class="relative flex items-start justify-center overflow-hidden">
+        <div class="relative z-10 text-center px-4 pt-8 md:pt-10 mx-auto">
+            <div class="anniversary-panel">
+                <div class="anniversary-kicker text-xs md:text-sm">
+                    <i class="fas fa-music" aria-hidden="true"></i>
+                    <span>2017 — 2026</span>
+                </div>
 
-            <!-- 標題-->
-            <h1 class="font-gaming text-5xl md:text-7xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-cyan-500 to-blue-600 neon-text animate-pulse lang-text" data-zh="TheFlyingTree" data-en="TheFlyingTree">
-                TheFlyingTree
-            </h1>
-            
-            <p class="text-xl md:text-2xl text-gray-300 mb-8 font-bold lang-text" 
-               data-zh="ACG鋼琴改編/扒譜" 
-               data-en="ACG Piano Arranger/Transcriber"
-               data-zh-cn="ACG钢琴改编/扒谱"
-               data-ja="ACGピアノアレンジ/楽譜作成"
-               data-ko="ACG 피아노 편곡/악보 제작">               
-                ACG鋼琴改編/扒譜
-            </p>
-            <!--
-            <p class="text-lg md:text-xl text-gray-400 mb-8 lang-text"
-               data-zh="Rolling Sky & Dancing Line 頂尖攻略"
-               data-en="Top tier guides for Rolling Sky & Dancing Line">
-                Rolling Sky & Dancing Line 頂尖攻略
-            </p>
-             -->
-            
+                <h1 class="hero-title font-gaming text-4xl md:text-6xl font-bold mt-4 tracking-wide">TheFlyingTree</h1>
+                <p class="hero-subtitle font-gaming text-2xl md:text-3xl font-bold mt-1 tracking-[0.12em]">9th Anniversary</p>
 
-            <div class="flex justify-center gap-4">
-                <!-- 按鈕顏色 -->
-                <a href="#piano-zone" class="px-8 py-3 border-2 border-amber-500 text-amber-400 rounded-full hover:bg-amber-500/20 transition duration-300 font-gaming tracking-widest font-bold lang-text" data-zh="觀看影片" data-en="Watch Videos" data-zh-cn="观看影片" data-ja="ビデオを見る" data-ko="동영상 보기">
-                    觀看影片
-                </a>
+                <p class="mt-3 text-sm md:text-lg text-white/90 font-semibold lang-text"
+                   data-zh="在雲端相遇，讓旋律繼續飛翔。"
+                   data-en="Meet above the clouds, and let the melody keep flying."
+                   data-zh-cn="在云端相遇，让旋律继续飞翔。"
+                   data-ja="雲の上で出会い、旋律をこれからも羽ばたかせよう。"
+                   data-ko="구름 위에서 만나, 멜로디가 계속 날아오르게 해요.">
+                    在雲端相遇，讓旋律繼續飛翔。
+                </p>
+
+                <div class="hero-actions mt-4">
+                    <a href="#piano-zone" class="hero-button-primary lang-text" data-zh="欣賞鋼琴作品" data-en="Explore Piano Works" data-zh-cn="欣赏钢琴作品" data-ja="ピアノ作品を見る" data-ko="피아노 작품 보기">
+                        欣賞鋼琴作品
+                    </a>
+                    <a href="https://www.youtube.com/@TheFlyingTree2809/" target="_blank" rel="noopener" class="hero-button-secondary lang-text" data-zh="訂閱 YouTube" data-en="Subscribe on YouTube" data-zh-cn="订阅 YouTube" data-ja="YouTubeで登録" data-ko="YouTube 구독">
+                        訂閱 YouTube
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -939,7 +1068,7 @@
                 
                 
             </div>
-            <p class="text-slate-600 text-sm">&copy; 2025 TheFlyingTree.</p>
+            <p class="text-slate-500 text-sm">&copy; 2026 TheFlyingTree · 9th Anniversary.</p>
         </div>
     </footer>
 
