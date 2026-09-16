@@ -283,7 +283,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            object-position: center;
+            object-position: center top;
             transition: transform 450ms ease, filter 300ms ease;
         }
 
@@ -295,8 +295,8 @@
         .sheet-badge {
             position: absolute;
             z-index: 2;
-            top: 1rem;
-            left: 1rem;
+            right: 1rem;
+            bottom: 1rem;
             padding: 0.38rem 0.72rem;
             border: 1px solid rgba(255, 255, 255, 0.62);
             border-radius: 999px;
@@ -817,29 +817,29 @@
             <div class="announcement-card reveal">
                 <span class="eyebrow"><i class="fas fa-music"></i> New sheet music</span>
                 <h3 class="font-sans text-2xl md:text-3xl text-white mt-4 mb-3 lang-text"
-                    data-zh="《挪德卡萊（Nod-Krai）》鋼琴譜"
-                    data-en="Nod-Krai — Piano Sheet Music"
-                    data-zh-cn="《挪德卡莱（Nod-Krai）》钢琴谱"
-                    data-ja="『ナド・クライ』ピアノ楽譜"
-                    data-ko="노드크라이 피아노 악보">
-                    《挪德卡萊（Nod-Krai）》鋼琴譜
+                    data-zh="《ENDROLL》鋼琴譜"
+                    data-en="ENDROLL — Piano Sheet Music"
+                    data-zh-cn="《ENDROLL》钢琴谱"
+                    data-ja="『ENDROLL』ピアノ楽譜"
+                    data-ko="ENDROLL 피아노 악보">
+                    《ENDROLL》鋼琴譜
                 </h3>
                 <p class="max-w-3xl text-slate-300 leading-relaxed mb-6 lang-text"
-                    data-zh="《原神》挪德卡萊主題曲的八頁鋼琴獨奏編曲，現已在 MyMusic5 上架。"
-                    data-en="An eight-page piano-solo arrangement of the Nod-Krai theme from Genshin Impact, now available on MyMusic5."
-                    data-zh-cn="《原神》挪德卡莱主题曲的八页钢琴独奏编曲，现已在 MyMusic5 上架。"
-                    data-ja="『原神』ナド・クライのテーマを、8ページのピアノソロに編曲しました。MyMusic5で配信中です。"
-                    data-ko="원신 노드크라이 테마를 8페이지 피아노 솔로로 편곡했습니다. MyMusic5에서 만나보세요.">
-                    《原神》挪德卡萊主題曲的八頁鋼琴獨奏編曲，現已在 MyMusic5 上架。
+                    data-zh="《ENDROLL》的四頁鋼琴獨奏編曲，已於 2026 年 8 月在 MyMusic5 上架。"
+                    data-en="A four-page piano-solo arrangement of ENDROLL, published on MyMusic5 in August 2026."
+                    data-zh-cn="《ENDROLL》的四页钢琴独奏编曲，已于 2026 年 8 月在 MyMusic5 上架。"
+                    data-ja="『ENDROLL』の4ページのピアノソロ編曲を、2026年8月にMyMusic5で公開しました。"
+                    data-ko="ENDROLL의 4페이지 피아노 솔로 편곡을 2026년 8월 MyMusic5에 공개했습니다.">
+                    《ENDROLL》的四頁鋼琴獨奏編曲，已於 2026 年 8 月在 MyMusic5 上架。
                 </p>
                 <div class="flex flex-wrap items-center gap-x-6 gap-y-3">
-                    <a href="https://www.mymusic5.com/7h3F1yin97r33/321766" target="_blank" rel="noopener" class="text-link">
+                    <a href="https://www.mymusic5.com/7h3f1yin97r33/507353" target="_blank" rel="noopener" class="text-link">
                         <span class="lang-text" data-zh="查看樂譜" data-en="View sheet music" data-zh-cn="查看乐谱" data-ja="楽譜を見る" data-ko="악보 보기">查看樂譜</span>
                         <i class="fas fa-arrow-right text-xs"></i>
                     </a>
                     <a href="https://www.mymusic5.com/7h3f1yin97r33" target="_blank" rel="noopener" class="text-sm text-slate-400 hover:text-white transition lang-text"
                        data-zh="瀏覽全部 8 份樂譜" data-en="Browse all 8 arrangements" data-zh-cn="浏览全部 8 份乐谱" data-ja="全8曲の楽譜を見る" data-ko="8개 악보 모두 보기">瀏覽全部 8 份樂譜</a>
-                    <span class="text-sm text-slate-500">2026 catalogue update</span>
+                    <span class="text-sm text-slate-500">2026-08-22</span>
                 </div>
             </div>
 
@@ -1087,43 +1087,46 @@
             <div class="text-center mb-14 reveal">
                 <h2 class="section-heading text-4xl mb-4 lang-text" data-zh="樂譜精選" data-en="SHEET MUSIC" data-zh-cn="乐谱精选" data-ja="楽譜セレクション" data-ko="악보 셀렉션">樂譜精選</h2>
                 <div class="section-rule mx-auto rounded-full"></div>
-                <p class="mt-4 text-slate-400 font-medium lang-text" data-zh="最新與人氣鋼琴獨奏編曲" data-en="Recent and popular piano-solo arrangements" data-zh-cn="最新与人气钢琴独奏编曲" data-ja="新作・人気のピアノソロ編曲" data-ko="최신 및 인기 피아노 솔로 편곡">最新與人氣鋼琴獨奏編曲</p>
+                <p class="mt-4 text-slate-400 font-medium lang-text" data-zh="最新鋼琴獨奏編曲 · 按發佈日期排列" data-en="Latest piano-solo arrangements · newest first" data-zh-cn="最新钢琴独奏编曲 · 按发布日期排列" data-ja="最新のピアノソロ編曲 · 公開日順" data-ko="최신 피아노 솔로 편곡 · 최신순">最新鋼琴獨奏編曲 · 按發佈日期排列</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <a href="https://www.mymusic5.com/7h3F1yin97r33/321766" target="_blank" rel="noopener" class="sheet-music-card reveal">
+                <a href="https://www.mymusic5.com/7h3f1yin97r33/507353" target="_blank" rel="noopener" class="sheet-music-card reveal">
                     <div class="sheet-music-cover">
-                        <img src="https://imgproxy.mapia.io/prebuild/48c678da73ba362a8d6b046f678b2042" alt="Nod-Krai piano sheet music cover" loading="lazy">
+                        <img src="https://img.musicfive.com/v8/mms/s/w/967x1395/44b942ad77bb0957bd6753acde02e722-1.webp" alt="ENDROLL first-page sheet music preview" loading="lazy">
                         <span class="sheet-badge">Latest</span>
                     </div>
                     <div class="sheet-meta">
-                        <p class="text-xs font-bold uppercase tracking-[0.15em] text-cyan-300">HOYO-MiX · Genshin Impact</p>
+                        <p class="text-xs font-bold uppercase tracking-[0.15em] text-cyan-300">Hiroyuki Sawano · SennaRin · Yohei Kawakami</p>
+                        <h3 class="font-sans mt-2 text-xl text-white">ENDROLL</h3>
+                        <time datetime="2026-08-22" class="block mt-2 text-xs tracking-[0.1em] text-slate-500">2026-08-22</time>
+                        <p class="mt-2 text-sm text-slate-400 lang-text" data-zh="鋼琴獨奏 · 4 頁" data-en="Piano solo · 4 pages" data-zh-cn="钢琴独奏 · 4 页" data-ja="ピアノソロ · 4ページ" data-ko="피아노 솔로 · 4페이지">鋼琴獨奏 · 4 頁</p>
+                        <span class="text-link mt-5"><span class="lang-text" data-zh="查看樂譜" data-en="View score" data-zh-cn="查看乐谱" data-ja="楽譜を見る" data-ko="악보 보기">查看樂譜</span><i class="fas fa-arrow-right text-xs"></i></span>
+                    </div>
+                </a>
+
+                <a href="https://www.mymusic5.com/7h3f1yin97r33/371171" target="_blank" rel="noopener" class="sheet-music-card reveal">
+                    <div class="sheet-music-cover">
+                        <img src="https://img.musicfive.com/v8/mms/s/w/480x693/42b554e8d0e092f09780a4add4601ba7-1.webp" alt="Hello, SEKAI first-page sheet music preview" loading="lazy">
+                    </div>
+                    <div class="sheet-meta">
+                        <p class="text-xs font-bold uppercase tracking-[0.15em] text-violet-300">DECO*27 · Project SEKAI</p>
+                        <h3 class="font-sans mt-2 text-xl text-white">Hello, SEKAI</h3>
+                        <time datetime="2026-03-29" class="block mt-2 text-xs tracking-[0.1em] text-slate-500">2026-03-29</time>
+                        <p class="mt-2 text-sm text-slate-400 lang-text" data-zh="鋼琴獨奏 · 5 頁" data-en="Piano solo · 5 pages" data-zh-cn="钢琴独奏 · 5 页" data-ja="ピアノソロ · 5ページ" data-ko="피아노 솔로 · 5페이지">鋼琴獨奏 · 5 頁</p>
+                        <span class="text-link mt-5"><span class="lang-text" data-zh="查看樂譜" data-en="View score" data-zh-cn="查看乐谱" data-ja="楽譜を見る" data-ko="악보 보기">查看樂譜</span><i class="fas fa-arrow-right text-xs"></i></span>
+                    </div>
+                </a>
+
+                <a href="https://www.mymusic5.com/7h3F1yin97r33/321766" target="_blank" rel="noopener" class="sheet-music-card reveal">
+                    <div class="sheet-music-cover">
+                        <img src="https://img.musicfive.com/v8/mms/s/w/480x693/4c9e1c70eea57f52bc2123d4eafaa445-1.webp" alt="Nod-Krai first-page sheet music preview" loading="lazy">
+                    </div>
+                    <div class="sheet-meta">
+                        <p class="text-xs font-bold uppercase tracking-[0.15em] text-amber-300">HOYO-MiX · Genshin Impact</p>
                         <h3 class="font-sans mt-2 text-xl text-white">Nod-Krai</h3>
+                        <time datetime="2025-10-07" class="block mt-2 text-xs tracking-[0.1em] text-slate-500">2025-10-07</time>
                         <p class="mt-2 text-sm text-slate-400 lang-text" data-zh="鋼琴獨奏 · 8 頁" data-en="Piano solo · 8 pages" data-zh-cn="钢琴独奏 · 8 页" data-ja="ピアノソロ · 8ページ" data-ko="피아노 솔로 · 8페이지">鋼琴獨奏 · 8 頁</p>
-                        <span class="text-link mt-5"><span class="lang-text" data-zh="查看樂譜" data-en="View score" data-zh-cn="查看乐谱" data-ja="楽譜を見る" data-ko="악보 보기">查看樂譜</span><i class="fas fa-arrow-right text-xs"></i></span>
-                    </div>
-                </a>
-
-                <a href="https://www.mymusic5.com/7h3F1yin97r33/291366" target="_blank" rel="noopener" class="sheet-music-card reveal">
-                    <div class="sheet-music-cover">
-                        <img src="https://imgproxy.mapia.io/prebuild/490d4fae680d0a8ba2819ad8a5a28958" alt="Proi Proi piano sheet music cover" loading="lazy">
-                    </div>
-                    <div class="sheet-meta">
-                        <p class="text-xs font-bold uppercase tracking-[0.15em] text-violet-300">HOYO-MiX · Honkai: Star Rail</p>
-                        <h3 class="font-sans mt-2 text-xl text-white">Proi Proi</h3>
-                        <p class="mt-2 text-sm text-slate-400 lang-text" data-zh="鋼琴獨奏 · 8 頁" data-en="Piano solo · 8 pages" data-zh-cn="钢琴独奏 · 8 页" data-ja="ピアノソロ · 8ページ" data-ko="피아노 솔로 · 8페이지">鋼琴獨奏 · 8 頁</p>
-                        <span class="text-link mt-5"><span class="lang-text" data-zh="查看樂譜" data-en="View score" data-zh-cn="查看乐谱" data-ja="楽譜を見る" data-ko="악보 보기">查看樂譜</span><i class="fas fa-arrow-right text-xs"></i></span>
-                    </div>
-                </a>
-
-                <a href="https://www.mymusic5.com/7h3F1yin97r33/156010" target="_blank" rel="noopener" class="sheet-music-card reveal">
-                    <div class="sheet-music-cover">
-                        <img src="https://imgproxy.mapia.io/prebuild/413b993712e04179884eb700fae36649" alt="End of All piano sheet music cover" loading="lazy">
-                    </div>
-                    <div class="sheet-meta">
-                        <p class="text-xs font-bold uppercase tracking-[0.15em] text-amber-300">Genshin Impact</p>
-                        <h3 class="font-sans mt-2 text-xl text-white">「終焉」×「End of All」</h3>
-                        <p class="mt-2 text-sm text-slate-400 lang-text" data-zh="鋼琴獨奏 · 6 頁" data-en="Piano solo · 6 pages" data-zh-cn="钢琴独奏 · 6 页" data-ja="ピアノソロ · 6ページ" data-ko="피아노 솔로 · 6페이지">鋼琴獨奏 · 6 頁</p>
                         <span class="text-link mt-5"><span class="lang-text" data-zh="查看樂譜" data-en="View score" data-zh-cn="查看乐谱" data-ja="楽譜を見る" data-ko="악보 보기">查看樂譜</span><i class="fas fa-arrow-right text-xs"></i></span>
                     </div>
                 </a>
