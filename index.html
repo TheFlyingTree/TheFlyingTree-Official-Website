@@ -45,6 +45,7 @@
 
          /* 首頁背景 */
         #home {
+            scroll-margin-top: 140px;
             background-image:
                 linear-gradient(180deg, rgba(3, 25, 54, 0.18) 0%, rgba(3, 25, 54, 0) 48%, rgba(3, 25, 54, 0.32) 100%),
                 url('assets/9th-anniversary-hero.png');
@@ -580,11 +581,12 @@
         .anniversary-panel {
             width: min(92vw, 620px);
             padding: 0.85rem 1.15rem 1rem;
-            border: 1px solid rgba(255, 255, 255, 0.48);
+            border: 1px solid rgba(255, 255, 255, 0.64);
             border-radius: 1.5rem;
-            background: linear-gradient(135deg, rgba(5, 37, 70, 0.18), rgba(8, 83, 126, 0.06));
-            box-shadow: 0 14px 44px rgba(0, 43, 78, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.32);
-            backdrop-filter: none;
+            background: linear-gradient(135deg, rgba(4, 30, 58, 0.7), rgba(8, 58, 94, 0.52));
+            box-shadow: 0 20px 48px rgba(0, 30, 54, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            -webkit-backdrop-filter: blur(18px) saturate(1.25);
+            backdrop-filter: blur(18px) saturate(1.25);
         }
 
         .anniversary-kicker {
@@ -609,6 +611,11 @@
         .hero-subtitle {
             color: #fde68a;
             text-shadow: 0 2px 14px rgba(3, 28, 58, 0.55);
+        }
+
+        .hero-slogan {
+            color: #fff;
+            text-shadow: 0 2px 12px rgba(0, 15, 36, 0.9);
         }
 
         .hero-button-primary,
@@ -658,8 +665,9 @@
                 width: calc(100vw - 2rem);
                 padding: 0.65rem 0.75rem 0.75rem;
                 border-radius: 1.15rem;
-                background: linear-gradient(135deg, rgba(5, 37, 70, 0.22), rgba(8, 83, 126, 0.08));
-                backdrop-filter: none;
+                background: linear-gradient(135deg, rgba(4, 30, 58, 0.78), rgba(8, 58, 94, 0.62));
+                -webkit-backdrop-filter: blur(16px) saturate(1.2);
+                backdrop-filter: blur(16px) saturate(1.2);
             }
 
             .anniversary-kicker {
@@ -771,13 +779,13 @@
             <div class="anniversary-panel">
                 <div class="anniversary-kicker text-xs md:text-sm">
                     <i class="fas fa-music" aria-hidden="true"></i>
-                    <span>2017 — 2026</span>
+                    <span>Since 2017</span>
                 </div>
 
                 <h1 class="hero-title font-gaming text-4xl md:text-6xl font-bold mt-4 tracking-wide">TheFlyingTree</h1>
                 <p class="hero-subtitle font-gaming text-2xl md:text-3xl font-bold mt-1 tracking-[0.12em]">9th Anniversary</p>
 
-                <p class="mt-3 text-sm md:text-lg text-white/90 font-semibold lang-text"
+                <p class="hero-slogan mt-3 text-sm md:text-lg font-semibold lang-text"
                    data-zh="在雲端相遇，讓旋律繼續飛翔。"
                    data-en="Meet above the clouds, and let the melody keep flying."
                    data-zh-cn="在云端相遇，让旋律继续飞翔。"
@@ -825,12 +833,12 @@
                     《ENDROLL》鋼琴譜
                 </h3>
                 <p class="max-w-3xl text-slate-300 leading-relaxed mb-6 lang-text"
-                    data-zh="《ENDROLL》的四頁鋼琴獨奏編曲，已於 2026 年 8 月在 MyMusic5 上架。"
-                    data-en="A four-page piano-solo arrangement of ENDROLL, published on MyMusic5 in August 2026."
-                    data-zh-cn="《ENDROLL》的四页钢琴独奏编曲，已于 2026 年 8 月在 MyMusic5 上架。"
-                    data-ja="『ENDROLL』の4ページのピアノソロ編曲を、2026年8月にMyMusic5で公開しました。"
-                    data-ko="ENDROLL의 4페이지 피아노 솔로 편곡을 2026년 8월 MyMusic5에 공개했습니다.">
-                    《ENDROLL》的四頁鋼琴獨奏編曲，已於 2026 年 8 月在 MyMusic5 上架。
+                    data-zh="《ENDROLL》的鋼琴獨奏編曲，已於 2026 年 8 月在 MyMusic5 上架。"
+                    data-en="A piano-solo arrangement of ENDROLL, published on MyMusic5 in August 2026."
+                    data-zh-cn="《ENDROLL》的钢琴独奏编曲，已于 2026 年 8 月在 MyMusic5 上架。"
+                    data-ja="『ENDROLL』のピアノソロ編曲を、2026年8月にMyMusic5で公開しました。"
+                    data-ko="ENDROLL의 피아노 솔로 편곡을 2026년 8월 MyMusic5에 공개했습니다.">
+                    《ENDROLL》的鋼琴獨奏編曲，已於 2026 年 8 月在 MyMusic5 上架。
                 </p>
                 <div class="flex flex-wrap items-center gap-x-6 gap-y-3">
                     <a href="https://www.mymusic5.com/7h3f1yin97r33/507353" target="_blank" rel="noopener" class="text-link">
@@ -1010,7 +1018,7 @@
                          <div class="aspect-video bg-black rounded-lg overflow-hidden relative mb-4">
                               <div class="aspect-video bg-black rounded-lg overflow-hidden relative mb-4">
                                      <img src="https://img.youtube.com/vi/St-gqciGTf0/maxresdefault.jpg" 
-                                         alt="Rolling Sky - Halloween"
+                                         alt="Proi Proi piano arrangement"
                                          class="w-full h-full object-cover transition duration-300 group-hover:brightness-75">
 
                                  <!-- Play icon overlay -->
@@ -1021,11 +1029,11 @@
                              </div> 
                          </div>
                          <span class="text-xs font-bold text-amber-900 bg-amber-400 px-2 py-1 rounded-full uppercase">Hot</span>
-                         <h3 class="text-lg font-bold text-white hover:text-blue-400 transition lang-text" 
-                             data-zh="拂曉 - 鋼琴改編" data-en="Proi Proi Piano Arrangement" data-zh-cn="拂晓 - 钢琴改编">
-                             拂曉 - 鋼琴改編
+                         <h3 class="text-lg font-bold text-white hover:text-blue-400 transition lang-text"
+                             data-zh="拂曉 · 鋼琴改編" data-zh-cn="拂晓 · 钢琴改编" data-en="Proi Proi · Piano Arrangement" data-ja="払暁 · ピアノアレンジ" data-ko="Proi Proi · 피아노 편곡">
+                             拂曉 · 鋼琴改編
                          </h3>
-                        <h4 class="mt-2 text-slate-400 text-sm lang-text" data-zh="崩壞：星穹鐵道EP" data-en="Honkai: Star Rail EP" data-zh-cn="崩坏：星穹铁道EP">崩壞:星穹鐵道EP</h4>
+                        <h4 class="mt-2 text-slate-400 text-sm lang-text" data-zh="崩壞：星穹鐵道 EP" data-zh-cn="崩坏：星穹铁道 EP" data-en="Honkai: Star Rail EP" data-ja="崩壊：スターレイル EP" data-ko="붕괴: 스타레일 EP">崩壞：星穹鐵道 EP</h4>
                         
                      </div>
                  </a>
@@ -1036,7 +1044,7 @@
                          <div class="aspect-video bg-black rounded-lg overflow-hidden relative mb-4">
                               <div class="aspect-video bg-black rounded-lg overflow-hidden relative mb-4">
                                      <img src="https://img.youtube.com/vi/eQKDUYxWf58/maxresdefault.jpg" 
-                                         alt="Rolling Sky - Halloween"
+                                         alt="End of All piano arrangement"
                                          class="w-full h-full object-cover transition duration-300 group-hover:brightness-75">
 
                                  <!-- Play icon overlay -->
@@ -1046,11 +1054,11 @@
                                  </div>
                              </div> 
                          </div>
-                         <h3 class="text-lg font-bold text-white hover:text-blue-400 transition lang-text" 
-                             data-zh="「終焉」×「End of All」 - 鋼琴改編" data-en="End of All Piano Arrangement" data-zh-cn="「终焉」×「End of All」 - 钢琴改编">
-                             「終焉」×「End of All」 - 鋼琴改編
+                         <h3 class="text-lg font-bold text-white hover:text-blue-400 transition lang-text"
+                             data-zh="「終焉」×「End of All」· 鋼琴改編" data-zh-cn="「终焉」×「End of All」· 钢琴改编" data-en="終焉 × End of All · Piano Arrangement" data-ja="終焉 × End of All · ピアノアレンジ" data-ko="終焉 × End of All · 피아노 편곡">
+                             「終焉」×「End of All」· 鋼琴改編
                          </h3>
-                         <h4 class="mt-2 text-slate-400 text-sm lang-text" data-zh="原神" data-en="Genshin Impact" data-zh-cn="原神">原神</h4>
+                         <h4 class="mt-2 text-slate-400 text-sm lang-text" data-zh="原神" data-zh-cn="原神" data-en="Genshin Impact" data-ja="原神" data-ko="원신">原神</h4>
                      </div>
                  </a>
 
@@ -1060,7 +1068,7 @@
                          <div class="aspect-video bg-black rounded-lg overflow-hidden relative mb-4">
                               <div class="aspect-video bg-black rounded-lg overflow-hidden relative mb-4">
                                      <img src="https://img.youtube.com/vi/MwxdfRdU8wY/maxresdefault.jpg" 
-                                         alt="Rolling Sky - Halloween"
+                                         alt="Nod-Krai piano arrangement"
                                          class="w-full h-full object-cover transition duration-300 group-hover:brightness-75">
 
                                  <!-- Play icon overlay -->
@@ -1070,11 +1078,11 @@
                                  </div>
                              </div> 
                          </div>
-                         <h3 class="text-lg font-bold text-white hover:text-blue-400 transition lang-text" 
-                             data-zh="挪德卡萊主題曲 - 鋼琴改編" data-en="Nod-Krai Main Theme Piano Arrangement">
-                             挪德卡萊主題曲 - 鋼琴改編
+                         <h3 class="text-lg font-bold text-white hover:text-blue-400 transition lang-text"
+                             data-zh="挪德卡萊主題曲 · 鋼琴改編" data-zh-cn="挪德卡莱主题曲 · 钢琴改编" data-en="Nod-Krai Main Theme · Piano Arrangement" data-ja="ナド・クライ メインテーマ · ピアノアレンジ" data-ko="노드크라이 메인 테마 · 피아노 편곡">
+                             挪德卡萊主題曲 · 鋼琴改編
                          </h3>
-                         <h4 class="mt-2 text-slate-400 text-sm lang-text" data-zh="原神:空月之歌" data-en="Genshin Impact">原神：空月之歌</h4>
+                         <h4 class="mt-2 text-slate-400 text-sm lang-text" data-zh="原神：空月之歌" data-zh-cn="原神：空月之歌" data-en="Genshin Impact: Song of the Welkin Moon" data-ja="原神：空月の歌" data-ko="원신: 공월의 노래">原神：空月之歌</h4>
                      </div>
                  </a>
             </div>
@@ -1098,7 +1106,7 @@
                     </div>
                     <div class="sheet-meta">
                         <p class="text-xs font-bold uppercase tracking-[0.15em] text-cyan-300">Hiroyuki Sawano · SennaRin · Yohei Kawakami</p>
-                        <h3 class="font-sans mt-2 text-xl text-white">ENDROLL</h3>
+                        <h3 class="font-sans mt-2 text-xl text-white lang-text" data-zh="ENDROLL" data-zh-cn="ENDROLL" data-en="ENDROLL" data-ja="ENDROLL" data-ko="ENDROLL">ENDROLL</h3>
                         <time datetime="2026-08-22" class="block mt-2 text-xs tracking-[0.1em] text-slate-500">2026-08-22</time>
                         <p class="mt-2 text-sm text-slate-400 lang-text" data-zh="鋼琴獨奏 · 4 頁" data-en="Piano solo · 4 pages" data-zh-cn="钢琴独奏 · 4 页" data-ja="ピアノソロ · 4ページ" data-ko="피아노 솔로 · 4페이지">鋼琴獨奏 · 4 頁</p>
                         <span class="text-link mt-5"><span class="lang-text" data-zh="查看樂譜" data-en="View score" data-zh-cn="查看乐谱" data-ja="楽譜を見る" data-ko="악보 보기">查看樂譜</span><i class="fas fa-arrow-right text-xs"></i></span>
@@ -1111,7 +1119,7 @@
                     </div>
                     <div class="sheet-meta">
                         <p class="text-xs font-bold uppercase tracking-[0.15em] text-violet-300">DECO*27 · Project SEKAI</p>
-                        <h3 class="font-sans mt-2 text-xl text-white">Hello, SEKAI</h3>
+                        <h3 class="font-sans mt-2 text-xl text-white lang-text" data-zh="Hello, SEKAI" data-zh-cn="Hello, SEKAI" data-en="Hello, SEKAI" data-ja="ハローセカイ" data-ko="Hello, SEKAI">Hello, SEKAI</h3>
                         <time datetime="2026-03-29" class="block mt-2 text-xs tracking-[0.1em] text-slate-500">2026-03-29</time>
                         <p class="mt-2 text-sm text-slate-400 lang-text" data-zh="鋼琴獨奏 · 5 頁" data-en="Piano solo · 5 pages" data-zh-cn="钢琴独奏 · 5 页" data-ja="ピアノソロ · 5ページ" data-ko="피아노 솔로 · 5페이지">鋼琴獨奏 · 5 頁</p>
                         <span class="text-link mt-5"><span class="lang-text" data-zh="查看樂譜" data-en="View score" data-zh-cn="查看乐谱" data-ja="楽譜を見る" data-ko="악보 보기">查看樂譜</span><i class="fas fa-arrow-right text-xs"></i></span>
@@ -1124,7 +1132,7 @@
                     </div>
                     <div class="sheet-meta">
                         <p class="text-xs font-bold uppercase tracking-[0.15em] text-amber-300">HOYO-MiX · Genshin Impact</p>
-                        <h3 class="font-sans mt-2 text-xl text-white">Nod-Krai</h3>
+                        <h3 class="font-sans mt-2 text-xl text-white lang-text" data-zh="挪德卡萊" data-zh-cn="挪德卡莱" data-en="Nod-Krai" data-ja="ナド・クライ" data-ko="노드크라이">挪德卡萊</h3>
                         <time datetime="2025-10-07" class="block mt-2 text-xs tracking-[0.1em] text-slate-500">2025-10-07</time>
                         <p class="mt-2 text-sm text-slate-400 lang-text" data-zh="鋼琴獨奏 · 8 頁" data-en="Piano solo · 8 pages" data-zh-cn="钢琴独奏 · 8 页" data-ja="ピアノソロ · 8ページ" data-ko="피아노 솔로 · 8페이지">鋼琴獨奏 · 8 頁</p>
                         <span class="text-link mt-5"><span class="lang-text" data-zh="查看樂譜" data-en="View score" data-zh-cn="查看乐谱" data-ja="楽譜を見る" data-ko="악보 보기">查看樂譜</span><i class="fas fa-arrow-right text-xs"></i></span>
@@ -1171,7 +1179,7 @@
                             
                             <!-- 標籤顏色 -->
                             <span class="text-xs font-bold text-orange-900 bg-orange-400 px-2 py-1 rounded-full uppercase">Fanmade Level</span>
-                            <h3 class="mt-3 text-xl font-bold text-white group-hover:text-orange-400 transition lang-text" data-zh="【滾動的天空】聯合飯製：太空之旅" data-en="Rolling Sky Fanmade/Edit Collab - Space Travel">【滾動的天空】聯合飯製：太空之旅</h3>
+                            <h3 class="mt-3 text-xl font-bold text-white group-hover:text-orange-400 transition lang-text" data-zh="【滾動的天空】聯合飯製：太空之旅" data-zh-cn="【滚动的天空】联合饭制：太空之旅" data-en="Rolling Sky Fanmade Collab · Space Travel" data-ja="Rolling Sky Fanmade Collab · Space Travel" data-ko="Rolling Sky Fanmade Collab · Space Travel">【滾動的天空】聯合飯製：太空之旅</h3>
                         </div>
                     </a>
                 </div>
@@ -1181,7 +1189,7 @@
                     <a href="https://www.youtube.com/watch?v=Yu3bmySRO0M" target="_blank" rel="noopener" class="block">
                         <div class="relative aspect-video bg-black group-hover:opacity-90 transition">
                             <div class="absolute inset-0 flex items-center justify-center bg-slate-800">
-                                <img src="https://img.youtube.com/vi/Yu3bmySRO0M/maxresdefault.jpg" 
+                                <img src="https://img.youtube.com/vi/Yu3bmySRO0M/maxresdefault.jpg"
                                         alt="Rolling Sky - Happy Birthday Weekly Match"
                                         class="w-full h-full object-cover transition duration-300 group-hover:brightness-75">
                                 
@@ -1194,7 +1202,7 @@
                             
                             <!-- 標籤顏色 -->
                             <span class="text-xs font-bold text-orange-900 bg-orange-400 px-2 py-1 rounded-full uppercase">Weekly Match</span>
-                            <h3 class="mt-3 text-xl font-bold text-white group-hover:text-orange-400 transition lang-text" data-zh="【滾動的天空】生日快樂周賽" data-en="Rolling Sky Happy Birthday Weekly Match">【滾動的天空】生日快樂周賽</h3>
+                            <h3 class="mt-3 text-xl font-bold text-white group-hover:text-orange-400 transition lang-text" data-zh="【滾動的天空】生日快樂周賽" data-zh-cn="【滚动的天空】生日快乐周赛" data-en="Rolling Sky · Happy Birthday Weekly Match" data-ja="Rolling Sky · Happy Birthday Weekly Match" data-ko="Rolling Sky · Happy Birthday Weekly Match">【滾動的天空】生日快樂周賽</h3>
                         </div>
                     </a>
                 </div>
@@ -1204,8 +1212,8 @@
                     <a href="https://www.youtube.com/watch?v=NGSSwfO2hOg" target="_blank" rel="noopener" class="block">
                         <div class="relative aspect-video bg-black group-hover:opacity-90 transition">
                             <div class="absolute inset-0 flex items-center justify-center bg-slate-800">
-                                <img src="https://img.youtube.com/vi/NGSSwfO2hOg/hqdefault.jpg" 
-                                        alt="Rolling Sky - Happy Birthday Weekly Match"
+                                <img src="https://img.youtube.com/vi/NGSSwfO2hOg/hqdefault.jpg"
+                                        alt="Rolling Sky - Delicacy Temptation"
                                         class="w-full h-full object-cover transition duration-300 group-hover:brightness-75">
                                 
                                 <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
@@ -1216,7 +1224,7 @@
                         <div class="p-6">
                             
                             <!--  標籤顏色 -->
-                            <h3 class="mt-3 text-xl font-bold text-white group-hover:text-orange-400 transition lang-text" data-zh="【滾動的天空】美食誘惑" data-en="Rolling Sky Level 49 - Delicacy Temptation">【滾動的天空】美食誘惑</h3>
+                            <h3 class="mt-3 text-xl font-bold text-white group-hover:text-orange-400 transition lang-text" data-zh="【滾動的天空】美食誘惑" data-zh-cn="【滚动的天空】美食诱惑" data-en="Rolling Sky · Delicacy Temptation" data-ja="Rolling Sky · Delicacy Temptation" data-ko="Rolling Sky · Delicacy Temptation">【滾動的天空】美食誘惑</h3>
                         </div>
                     </a>
             </div>
@@ -1251,7 +1259,7 @@
                             
 
                             <span class="text-xs font-bold text-purple-900 bg-purple-400 px-2 py-1 rounded-full uppercase">Soundtrack Mashup</span>
-                            <h3 class="mt-3 text-xl font-bold text-white group-hover:text-purple-400 transition lang-text" data-zh="【跳舞的線混曲】戰殤 x The Despacito" data-en="Dancing Line Mashup - The War x The Despacito (Soundtrack)">【跳舞的線混曲】戰殤 x The Despacito</h3>
+                            <h3 class="mt-3 text-xl font-bold text-white group-hover:text-purple-400 transition lang-text" data-zh="【跳舞的線混曲】戰殤 × The Despacito" data-zh-cn="【跳舞的线混曲】战殇 × The Despacito" data-en="Dancing Line Mashup · The War × The Despacito" data-ja="Dancing Line Mashup · The War × The Despacito" data-ko="Dancing Line Mashup · The War × The Despacito">【跳舞的線混曲】戰殤 × The Despacito</h3>
                         </div>
                     </a>
                 </div>
@@ -1271,7 +1279,7 @@
                             </div>
                         </div>
                         <div class="p-6">
-                            <h3 class="mt-3 text-xl font-bold text-white group-hover:text-purple-400 transition lang-text" data-zh="【跳舞的線】青石巷" data-en="Dancing Line - The Alley">【跳舞的線】青石巷</h3>
+                            <h3 class="mt-3 text-xl font-bold text-white group-hover:text-purple-400 transition lang-text" data-zh="【跳舞的線】青石巷" data-zh-cn="【跳舞的线】青石巷" data-en="Dancing Line · The Alley" data-ja="Dancing Line · The Alley" data-ko="Dancing Line · The Alley">【跳舞的線】青石巷</h3>
                         </div>
                     </a>
                 </div>
@@ -1293,7 +1301,7 @@
                         <div class="p-6">
                             
 
-                            <h3 class="mt-3 text-xl font-bold text-white group-hover:text-purple-400 transition lang-text" data-zh="【跳舞的線】春節" data-en="Dancing Line - The Spring Festival">【跳舞的線】春節</h3>
+                            <h3 class="mt-3 text-xl font-bold text-white group-hover:text-purple-400 transition lang-text" data-zh="【跳舞的線】春節" data-zh-cn="【跳舞的线】春节" data-en="Dancing Line · The Spring Festival" data-ja="Dancing Line · The Spring Festival" data-ko="Dancing Line · The Spring Festival">【跳舞的線】春節</h3>
                         </div>
                     </a>
             </div>
