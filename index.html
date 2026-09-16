@@ -264,47 +264,49 @@
 
         .sheet-music-cover {
             position: relative;
-            display: grid;
             min-height: 13rem;
-            place-items: center;
             overflow: hidden;
-            isolation: isolate;
+            background: #102f43;
         }
 
-        .sheet-music-cover::before,
         .sheet-music-cover::after {
             content: "";
             position: absolute;
-            border-radius: 50%;
-            filter: blur(2px);
-            z-index: -1;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 48%, rgba(4, 20, 32, 0.35));
+            pointer-events: none;
         }
 
-        .sheet-music-cover::before {
-            width: 14rem;
-            height: 14rem;
-            top: -6rem;
-            right: -3rem;
-            background: rgba(255, 255, 255, 0.18);
+        .sheet-music-cover img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: transform 450ms ease, filter 300ms ease;
         }
 
-        .sheet-music-cover::after {
-            width: 9rem;
-            height: 9rem;
-            bottom: -4rem;
-            left: -2rem;
-            background: rgba(2, 35, 54, 0.2);
+        .sheet-music-card:hover .sheet-music-cover img {
+            transform: scale(1.035);
+            filter: saturate(1.08) contrast(1.03);
         }
 
-        .sheet-cover-gold { background: linear-gradient(145deg, #f4c86d, #e38b6f 58%, #5868a2); }
-        .sheet-cover-sky { background: linear-gradient(145deg, #9ae3f5, #4fa9cc 58%, #225e86); }
-        .sheet-cover-violet { background: linear-gradient(145deg, #c9b5ff, #708bd6 55%, #274d79); }
-
-        .sheet-note {
-            color: rgba(255, 255, 255, 0.92);
-            font-family: Georgia, serif;
-            font-size: 5.6rem;
-            text-shadow: 0 12px 28px rgba(8, 28, 44, 0.3);
+        .sheet-badge {
+            position: absolute;
+            z-index: 2;
+            top: 1rem;
+            left: 1rem;
+            padding: 0.38rem 0.72rem;
+            border: 1px solid rgba(255, 255, 255, 0.62);
+            border-radius: 999px;
+            color: #09283a;
+            background: rgba(255, 255, 255, 0.9);
+            font-size: 0.68rem;
+            font-weight: 800;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            backdrop-filter: blur(8px);
         }
 
         .sheet-meta {
@@ -815,29 +817,29 @@
             <div class="announcement-card reveal">
                 <span class="eyebrow"><i class="fas fa-music"></i> New sheet music</span>
                 <h3 class="font-sans text-2xl md:text-3xl text-white mt-4 mb-3 lang-text"
-                    data-zh="《ハローセカイ（Hello, SEKAI）》鋼琴譜"
-                    data-en="Hello, SEKAI — Piano Sheet Music"
-                    data-zh-cn="《ハローセカイ（Hello, SEKAI）》钢琴谱"
-                    data-ja="『ハローセカイ』ピアノ楽譜"
-                    data-ko="Hello, SEKAI 피아노 악보">
-                    《ハローセカイ（Hello, SEKAI）》鋼琴譜
+                    data-zh="《挪德卡萊（Nod-Krai）》鋼琴譜"
+                    data-en="Nod-Krai — Piano Sheet Music"
+                    data-zh-cn="《挪德卡莱（Nod-Krai）》钢琴谱"
+                    data-ja="『ナド・クライ』ピアノ楽譜"
+                    data-ko="노드크라이 피아노 악보">
+                    《挪德卡萊（Nod-Krai）》鋼琴譜
                 </h3>
                 <p class="max-w-3xl text-slate-300 leading-relaxed mb-6 lang-text"
-                    data-zh="世界計劃劇場版插入曲，由 DECO*27 創作。五頁鋼琴獨奏編曲現已在 MyMusic5 上架。"
-                    data-en="The DECO*27 insert song from COLORFUL STAGE! The Movie, arranged as a five-page piano solo and now available on MyMusic5."
-                    data-zh-cn="《世界计划》剧场版插入曲，由 DECO*27 创作。五页钢琴独奏编曲现已在 MyMusic5 上架。"
-                    data-ja="劇場版プロセカ挿入曲を、5ページのピアノソロに編曲しました。MyMusic5で配信中です。"
-                    data-ko="컬러풀 스테이지! 더 무비 삽입곡을 5페이지 피아노 솔로로 편곡했습니다. MyMusic5에서 만나보세요.">
-                    世界計劃劇場版插入曲，由 DECO*27 創作。五頁鋼琴獨奏編曲現已在 MyMusic5 上架。
+                    data-zh="《原神》挪德卡萊主題曲的八頁鋼琴獨奏編曲，現已在 MyMusic5 上架。"
+                    data-en="An eight-page piano-solo arrangement of the Nod-Krai theme from Genshin Impact, now available on MyMusic5."
+                    data-zh-cn="《原神》挪德卡莱主题曲的八页钢琴独奏编曲，现已在 MyMusic5 上架。"
+                    data-ja="『原神』ナド・クライのテーマを、8ページのピアノソロに編曲しました。MyMusic5で配信中です。"
+                    data-ko="원신 노드크라이 테마를 8페이지 피아노 솔로로 편곡했습니다. MyMusic5에서 만나보세요.">
+                    《原神》挪德卡萊主題曲的八頁鋼琴獨奏編曲，現已在 MyMusic5 上架。
                 </p>
                 <div class="flex flex-wrap items-center gap-x-6 gap-y-3">
-                    <a href="https://www.mymusic5.com/7h3F1yin97r33/371171" target="_blank" rel="noopener" class="text-link">
+                    <a href="https://www.mymusic5.com/7h3F1yin97r33/321766" target="_blank" rel="noopener" class="text-link">
                         <span class="lang-text" data-zh="查看樂譜" data-en="View sheet music" data-zh-cn="查看乐谱" data-ja="楽譜を見る" data-ko="악보 보기">查看樂譜</span>
                         <i class="fas fa-arrow-right text-xs"></i>
                     </a>
                     <a href="https://www.mymusic5.com/7h3f1yin97r33" target="_blank" rel="noopener" class="text-sm text-slate-400 hover:text-white transition lang-text"
                        data-zh="瀏覽全部 8 份樂譜" data-en="Browse all 8 arrangements" data-zh-cn="浏览全部 8 份乐谱" data-ja="全8曲の楽譜を見る" data-ko="8개 악보 모두 보기">瀏覽全部 8 份樂譜</a>
-                    <span class="text-sm text-slate-500">2026-03-29</span>
+                    <span class="text-sm text-slate-500">2026 catalogue update</span>
                 </div>
             </div>
 
@@ -1089,22 +1091,10 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <a href="https://www.mymusic5.com/7h3F1yin97r33/371171" target="_blank" rel="noopener" class="sheet-music-card reveal">
-                    <div class="sheet-music-cover sheet-cover-gold">
-                        <span class="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.14em] text-slate-800">Latest</span>
-                        <span class="sheet-note">&#9835;</span>
-                    </div>
-                    <div class="sheet-meta">
-                        <p class="text-xs font-bold uppercase tracking-[0.15em] text-amber-300">DECO*27 · Project SEKAI</p>
-                        <h3 class="font-sans mt-2 text-xl text-white">Hello, SEKAI</h3>
-                        <p class="mt-2 text-sm text-slate-400 lang-text" data-zh="鋼琴獨奏 · 5 頁" data-en="Piano solo · 5 pages" data-zh-cn="钢琴独奏 · 5 页" data-ja="ピアノソロ · 5ページ" data-ko="피아노 솔로 · 5페이지">鋼琴獨奏 · 5 頁</p>
-                        <span class="text-link mt-5"><span class="lang-text" data-zh="查看樂譜" data-en="View score" data-zh-cn="查看乐谱" data-ja="楽譜を見る" data-ko="악보 보기">查看樂譜</span><i class="fas fa-arrow-right text-xs"></i></span>
-                    </div>
-                </a>
-
                 <a href="https://www.mymusic5.com/7h3F1yin97r33/321766" target="_blank" rel="noopener" class="sheet-music-card reveal">
-                    <div class="sheet-music-cover sheet-cover-sky">
-                        <span class="sheet-note">&#9834;</span>
+                    <div class="sheet-music-cover">
+                        <img src="https://imgproxy.mapia.io/prebuild/48c678da73ba362a8d6b046f678b2042" alt="Nod-Krai piano sheet music cover" loading="lazy">
+                        <span class="sheet-badge">Latest</span>
                     </div>
                     <div class="sheet-meta">
                         <p class="text-xs font-bold uppercase tracking-[0.15em] text-cyan-300">HOYO-MiX · Genshin Impact</p>
@@ -1115,13 +1105,25 @@
                 </a>
 
                 <a href="https://www.mymusic5.com/7h3F1yin97r33/291366" target="_blank" rel="noopener" class="sheet-music-card reveal">
-                    <div class="sheet-music-cover sheet-cover-violet">
-                        <span class="sheet-note">&#9833;</span>
+                    <div class="sheet-music-cover">
+                        <img src="https://imgproxy.mapia.io/prebuild/490d4fae680d0a8ba2819ad8a5a28958" alt="Proi Proi piano sheet music cover" loading="lazy">
                     </div>
                     <div class="sheet-meta">
                         <p class="text-xs font-bold uppercase tracking-[0.15em] text-violet-300">HOYO-MiX · Honkai: Star Rail</p>
                         <h3 class="font-sans mt-2 text-xl text-white">Proi Proi</h3>
                         <p class="mt-2 text-sm text-slate-400 lang-text" data-zh="鋼琴獨奏 · 8 頁" data-en="Piano solo · 8 pages" data-zh-cn="钢琴独奏 · 8 页" data-ja="ピアノソロ · 8ページ" data-ko="피아노 솔로 · 8페이지">鋼琴獨奏 · 8 頁</p>
+                        <span class="text-link mt-5"><span class="lang-text" data-zh="查看樂譜" data-en="View score" data-zh-cn="查看乐谱" data-ja="楽譜を見る" data-ko="악보 보기">查看樂譜</span><i class="fas fa-arrow-right text-xs"></i></span>
+                    </div>
+                </a>
+
+                <a href="https://www.mymusic5.com/7h3F1yin97r33/156010" target="_blank" rel="noopener" class="sheet-music-card reveal">
+                    <div class="sheet-music-cover">
+                        <img src="https://imgproxy.mapia.io/prebuild/413b993712e04179884eb700fae36649" alt="End of All piano sheet music cover" loading="lazy">
+                    </div>
+                    <div class="sheet-meta">
+                        <p class="text-xs font-bold uppercase tracking-[0.15em] text-amber-300">Genshin Impact</p>
+                        <h3 class="font-sans mt-2 text-xl text-white">「終焉」×「End of All」</h3>
+                        <p class="mt-2 text-sm text-slate-400 lang-text" data-zh="鋼琴獨奏 · 6 頁" data-en="Piano solo · 6 pages" data-zh-cn="钢琴独奏 · 6 页" data-ja="ピアノソロ · 6ページ" data-ko="피아노 솔로 · 6페이지">鋼琴獨奏 · 6 頁</p>
                         <span class="text-link mt-5"><span class="lang-text" data-zh="查看樂譜" data-en="View score" data-zh-cn="查看乐谱" data-ja="楽譜を見る" data-ko="악보 보기">查看樂譜</span><i class="fas fa-arrow-right text-xs"></i></span>
                     </div>
                 </a>
@@ -1352,9 +1354,9 @@
         /* --- 語言切換邏輯 --- */
         const desktopSelect = document.getElementById('desktop-lang-select');
         const mobileSelect = document.getElementById('mobile-lang-select');
-        let currentLang = 'zh-tw'; // 預設繁體中文
+        let currentLang = 'zh'; // 預設繁體中文
 
-        function updateLanguage(lang) {
+        function updateLanguage(lang = currentLang) {
             currentLang = lang;
             const elements = document.querySelectorAll('.lang-text');
             elements.forEach(el => {
@@ -1420,17 +1422,17 @@
                 icon.classList.replace('fa-chevron-up', 'fa-chevron-down');
                 text.dataset.zh = "查看更多公告";
                 text.dataset.en = "Show More Announcements";
-                text.dataset['zh-cn'] = "查看更多公告";
-                text.dataset.jp = "もっと見るお知らせ";
-                text.dataset.kr = "더 많은 공지 보기";
+                text.setAttribute('data-zh-cn', "查看更多公告");
+                text.dataset.ja = "もっと見るお知らせ";
+                text.dataset.ko = "더 많은 공지 보기";
             } else {
                 // 展開
                 icon.classList.replace('fa-chevron-down', 'fa-chevron-up');
                 text.dataset.zh = "收起公告";
                 text.dataset.en = "Show Less";
-                text.dataset['zh-cn'] = "收起公告";
-                text.dataset.jp = "お知らせを閉じる";
-                text.dataset.kr = "공지 접기";
+                text.setAttribute('data-zh-cn', "收起公告");
+                text.dataset.ja = "お知らせを閉じる";
+                text.dataset.ko = "공지 접기";
             }
 
             // 觸發語言更新
