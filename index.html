@@ -46,7 +46,6 @@
          /* 首頁背景 */
         #home {
             scroll-margin-top: 140px;
-            align-items: flex-end;
             background-image:
                 linear-gradient(180deg, rgba(3, 25, 54, 0.18) 0%, rgba(3, 25, 54, 0) 48%, rgba(3, 25, 54, 0.32) 100%),
                 url('assets/9th-anniversary-hero.png');
@@ -58,6 +57,14 @@
         }
 
         #home > div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            min-height: calc(100vh - 140px);
+            box-sizing: border-box;
+            padding-top: 1rem;
             padding-bottom: 2rem;
         }
 
@@ -583,48 +590,38 @@
             50% { transform: translateY(-10px) rotate(5deg); }
         }
 
-        .anniversary-panel {
-            width: min(92vw, 520px);
-            padding: 0.65rem 1rem 0.8rem;
-            border: 1px solid rgba(255, 255, 255, 0.9);
-            border-radius: 1.5rem;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.78), rgba(226, 246, 255, 0.65));
-            box-shadow: 0 16px 42px rgba(0, 41, 72, 0.17), inset 0 1px 0 rgba(255, 255, 255, 0.68);
-            -webkit-backdrop-filter: blur(10px) saturate(1.1);
-            backdrop-filter: blur(10px) saturate(1.1);
+        .anniversary-copy {
+            width: min(92vw, 620px);
         }
 
         .anniversary-kicker {
             display: inline-flex;
             align-items: center;
             gap: 0.55rem;
-            padding: 0.32rem 0.75rem;
-            border-radius: 999px;
-            background: rgba(255, 255, 255, 0.88);
-            color: #075985;
+            color: #fff;
             font-weight: 800;
             letter-spacing: 0.18em;
             text-transform: uppercase;
-            box-shadow: 0 8px 24px rgba(2, 132, 199, 0.2);
+            text-shadow: 0 2px 10px rgba(0, 31, 67, 0.9);
         }
 
         .hero-title {
             font-size: clamp(2.2rem, 4.8vw, 3.25rem) !important;
             margin-top: 0.5rem !important;
-            color: #123d59;
-            text-shadow: 0 2px 12px rgba(255, 255, 255, 0.7);
+            color: #fff;
+            text-shadow: 0 3px 18px rgba(0, 28, 66, 0.9), 0 1px 2px rgba(0, 28, 66, 0.8);
         }
 
         .hero-subtitle {
             font-size: clamp(1.2rem, 2.5vw, 1.6rem) !important;
-            color: #905c0a;
-            text-shadow: 0 2px 10px rgba(255, 255, 255, 0.75);
+            color: #ffedaa;
+            text-shadow: 0 2px 12px rgba(0, 28, 66, 0.9);
         }
 
         .hero-slogan {
             margin-top: 0.35rem !important;
-            color: #164562;
-            text-shadow: 0 1px 8px rgba(255, 255, 255, 0.85);
+            color: #fff;
+            text-shadow: 0 2px 12px rgba(0, 24, 61, 0.95), 0 1px 2px rgba(0, 24, 61, 0.8);
         }
 
         .hero-button-primary,
@@ -652,17 +649,26 @@
             background: rgba(3, 35, 65, 0.36);
         }
 
+        #home .hero-button-secondary {
+            border-color: rgba(255, 190, 201, 0.9);
+            background: linear-gradient(135deg, #e43c60, #a8113c);
+            box-shadow: 0 10px 30px rgba(136, 13, 49, 0.36);
+        }
+
         .hero-button-primary:hover,
         .hero-button-secondary:hover {
             transform: translateY(-2px);
             box-shadow: 0 14px 34px rgba(2, 132, 199, 0.28);
         }
 
+        #home .hero-button-secondary:hover {
+            box-shadow: 0 14px 34px rgba(136, 13, 49, 0.48);
+        }
+
         .hero-actions {
             display: flex;
             justify-content: center;
             gap: 0.75rem;
-            margin-top: 0.65rem !important;
         }
 
         @media (max-width: 768px) {
@@ -671,17 +677,17 @@
                 background-position: 37% center;
             }
 
-            .anniversary-panel {
+            #home > div {
+                min-height: calc(100svh - 80px);
+                padding-top: 1rem;
+                padding-bottom: 1.5rem;
+            }
+
+            .anniversary-copy {
                 width: calc(100vw - 2rem);
-                padding: 0.65rem 0.75rem 0.75rem;
-                border-radius: 1.15rem;
-                background: linear-gradient(135deg, rgba(255, 255, 255, 0.85), rgba(226, 246, 255, 0.72));
-                -webkit-backdrop-filter: blur(9px) saturate(1.1);
-                backdrop-filter: blur(9px) saturate(1.1);
             }
 
             .anniversary-kicker {
-                padding: 0.32rem 0.65rem;
                 font-size: 0.65rem;
             }
 
@@ -694,7 +700,7 @@
                 font-size: 1.2rem !important;
             }
 
-            .anniversary-panel > p.lang-text {
+            .anniversary-copy > p.lang-text {
                 margin-top: 0.35rem !important;
                 font-size: 0.75rem !important;
             }
@@ -703,7 +709,6 @@
                 display: grid !important;
                 grid-template-columns: 1fr 1fr;
                 gap: 0.5rem;
-                margin-top: 0.65rem !important;
             }
 
             .hero-button-primary,
@@ -785,8 +790,8 @@
 
     <!-- 首頁封面 -->
     <section id="home" class="relative flex items-start justify-center overflow-hidden">
-        <div class="relative z-10 text-center px-4 pt-8 md:pt-10 mx-auto">
-            <div class="anniversary-panel">
+        <div class="relative z-10 text-center px-4 mx-auto">
+            <div class="anniversary-copy">
                 <div class="anniversary-kicker text-xs md:text-sm">
                     <i class="fas fa-music" aria-hidden="true"></i>
                     <span>Since 2017</span>
@@ -803,15 +808,15 @@
                    data-ko="구름 위에서 만나, 멜로디가 계속 날아오르게 해요.">
                     在雲端相遇，讓旋律繼續飛翔。
                 </p>
+            </div>
 
-                <div class="hero-actions mt-4">
-                    <a href="#piano-zone" class="hero-button-primary lang-text" data-zh="欣賞鋼琴作品" data-en="Explore Piano Works" data-zh-cn="欣赏钢琴作品" data-ja="ピアノ作品を見る" data-ko="피아노 작품 보기">
-                        欣賞鋼琴作品
-                    </a>
-                    <a href="https://www.youtube.com/@TheFlyingTree2809/" target="_blank" rel="noopener" class="hero-button-secondary lang-text" data-zh="訂閱 YouTube" data-en="Subscribe on YouTube" data-zh-cn="订阅 YouTube" data-ja="YouTubeで登録" data-ko="YouTube 구독">
-                        訂閱 YouTube
-                    </a>
-                </div>
+            <div class="hero-actions">
+                <a href="#piano-zone" class="hero-button-primary lang-text" data-zh="欣賞鋼琴作品" data-en="Explore Piano Works" data-zh-cn="欣赏钢琴作品" data-ja="ピアノ作品を見る" data-ko="피아노 작품 보기">
+                    欣賞鋼琴作品
+                </a>
+                <a href="https://www.youtube.com/@TheFlyingTree2809/" target="_blank" rel="noopener" class="hero-button-secondary lang-text" data-zh="訂閱 YouTube" data-en="Subscribe on YouTube" data-zh-cn="订阅 YouTube" data-ja="YouTubeで登録" data-ko="YouTube 구독">
+                    訂閱 YouTube
+                </a>
             </div>
         </div>
     </section>
