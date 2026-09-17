@@ -1,5 +1,5 @@
 # TheFlyingTree Official Website
-### webpage made by TheFlyingTree with Grok 4.1 and Gemini 3
+### webpage made by TheFlyingTree with Grok, Gemini and GPT
 ### Dancing Line background image is from The Shelter by BluesDawn
 
 ## 9th anniversary refresh
