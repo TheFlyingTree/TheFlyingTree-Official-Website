@@ -4,13 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- 瀏覽器標籤頁標題 -->
-    <title>TheFlyingTree Official Website</title>
+    <title>TheFlyingTree | 9th Anniversary</title>
+    <meta name="description" content="TheFlyingTree 9th Anniversary — ACG piano arrangements, Rolling Sky and Dancing Line." />
+    <link rel="preload" as="image" href="assets/9th-anniversary-hero.png" />
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Quicksand:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Marcellus&family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Serif+TC:wght@600;700&display=swap');
+
+        :root {
+            --ink: #eaf4fb;
+            --muted: #a8bdcb;
+            --night: #06131f;
+            --night-soft: #0a2132;
+            --sky: #77d3f5;
+            --sky-deep: #2496c8;
+            --gold: #f6cf7b;
+            --violet: #c6afff;
+            --line: rgba(190, 225, 241, 0.16);
+            --glass: rgba(9, 35, 52, 0.72);
+        }
         
         .section-bg {
             background-size: cover;
@@ -30,13 +45,36 @@
 
          /* 首頁背景 */
         #home {
-            /* 首頁背景圖片 */
-            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://cdn.jsdelivr.net/gh/Dandelion206/TheFlyingTree-Official-Website@main/main_section_bg.png');
-            background-size: cover;           /* 自動縮放填滿，不留白也不裁切過多 */
-            background-position: center center; 
-            background-repeat: no-repeat; 
-            background-attachment: fixed;
-            min-height: 100vh;
+            scroll-margin-top: 140px;
+            background-image:
+                linear-gradient(180deg, rgba(3, 25, 54, 0.18) 0%, rgba(3, 25, 54, 0) 48%, rgba(3, 25, 54, 0.32) 100%),
+                url('assets/9th-anniversary-hero.png');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: scroll;
+            min-height: calc(100vh - 140px);
+        }
+
+        #home > div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            min-height: calc(100vh - 140px);
+            box-sizing: border-box;
+            padding-top: 1rem;
+            padding-bottom: 2rem;
+        }
+
+        #home::after {
+            content: '';
+            position: absolute;
+            inset: auto 0 0;
+            height: 22%;
+            background: linear-gradient(to bottom, transparent, #071827);
+            pointer-events: none;
         }
 
         /* Rolling Sky 區塊背景 */
@@ -73,18 +111,256 @@
         }
         body {
             /* 字體 */
-            font-family: 'Quicksand',  'Noto Sans SC', 'Noto Sans JP', 'Noto Sans KR', sans-serif;
-            background-color: #050b14;
-            color: #e2e8f0;
+            font-family: 'Manrope', 'Noto Sans TC', 'Noto Sans SC', 'Noto Sans JP', 'Noto Sans KR', sans-serif;
+            background:
+                radial-gradient(circle at 16% 0%, rgba(51, 164, 210, 0.16), transparent 32rem),
+                radial-gradient(circle at 88% 28%, rgba(246, 207, 123, 0.07), transparent 28rem),
+                var(--night);
+            color: var(--ink);
             overflow-x: hidden;
+            line-height: 1.65;
+            letter-spacing: 0.008em;
         }
 
         .font-gaming {
-            font-family: 'Orbitron', sans-serif;
+            font-family: 'Marcellus', 'Noto Serif TC', serif;
         }
 
         .font-sans {
-            font-family:"思源黑體", 'Noto Sans TC', sans-serif;
+            font-family: 'Marcellus', 'Noto Serif TC', serif;
+        }
+
+        ::selection {
+            color: #052334;
+            background: var(--gold);
+        }
+
+        .site-nav {
+            background: rgba(4, 24, 38, 0.88) !important;
+            border-color: rgba(153, 218, 241, 0.2) !important;
+            box-shadow: 0 12px 34px rgba(2, 14, 24, 0.28) !important;
+        }
+
+        @media (max-width: 1100px) {
+            #mobile-menu-btn { display: block !important; }
+            .desktop-navigation { display: none !important; }
+            #mobile-menu { display: flex !important; }
+        }
+
+        @media (min-width: 1101px) {
+            #mobile-menu-btn { display: none !important; }
+            .desktop-navigation { display: flex !important; }
+            #mobile-menu { display: none !important; }
+        }
+
+        .content-section {
+            overflow: hidden;
+            scroll-margin-top: 8.75rem;
+            background:
+                linear-gradient(180deg, rgba(8, 30, 46, 0.72), rgba(5, 20, 32, 0.9)) !important;
+            border-top: 1px solid rgba(179, 220, 238, 0.08);
+        }
+
+        .content-section::before {
+            content: "";
+            position: absolute;
+            width: 28rem;
+            height: 28rem;
+            top: -15rem;
+            right: -10rem;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(70, 179, 221, 0.12), transparent 68%);
+            pointer-events: none;
+        }
+
+        .section-heading {
+            color: #f6fbff !important;
+            font-family: 'Marcellus', 'Noto Serif TC', serif !important;
+            font-weight: 600 !important;
+            letter-spacing: 0.12em;
+            text-wrap: balance;
+        }
+
+        .section-rule {
+            height: 2px !important;
+            width: 4.5rem !important;
+            background: linear-gradient(90deg, transparent, var(--gold), var(--sky), transparent) !important;
+            box-shadow: none !important;
+        }
+
+        .surface-card {
+            height: 100%;
+            padding: 1rem !important;
+            border: 1px solid var(--line) !important;
+            border-top-color: rgba(246, 207, 123, 0.48) !important;
+            border-radius: 1.35rem !important;
+            background: linear-gradient(150deg, rgba(15, 50, 70, 0.84), rgba(7, 25, 39, 0.9)) !important;
+            box-shadow: 0 18px 48px rgba(1, 12, 21, 0.24);
+            transform: none !important;
+            transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease !important;
+        }
+
+        .surface-card:hover {
+            transform: translateY(-5px) !important;
+            border-color: rgba(119, 211, 245, 0.44) !important;
+            box-shadow: 0 24px 54px rgba(1, 12, 21, 0.36);
+        }
+
+        .surface-card img {
+            border-radius: 0.95rem;
+        }
+
+        .announcement-card {
+            position: relative;
+            padding: clamp(1.4rem, 3vw, 2.2rem);
+            overflow: hidden;
+            border: 1px solid rgba(246, 207, 123, 0.22);
+            border-radius: 1.5rem;
+            background: linear-gradient(135deg, rgba(16, 52, 72, 0.86), rgba(8, 27, 41, 0.92));
+            box-shadow: 0 22px 62px rgba(1, 12, 20, 0.28);
+        }
+
+        .announcement-card::after {
+            content: "\266B";
+            position: absolute;
+            right: 1.3rem;
+            top: -1.8rem;
+            color: rgba(246, 207, 123, 0.08);
+            font-family: Georgia, serif;
+            font-size: 10rem;
+            line-height: 1;
+            pointer-events: none;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--gold);
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+        }
+
+        .text-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+            color: #bcecff;
+            font-weight: 700;
+            transition: color 180ms ease, gap 180ms ease;
+        }
+
+        .text-link:hover {
+            gap: 0.8rem;
+            color: white;
+        }
+
+        .sheet-music-card {
+            display: flex;
+            min-height: 100%;
+            flex-direction: column;
+            overflow: hidden;
+            border: 1px solid var(--line);
+            border-radius: 1.4rem;
+            background: linear-gradient(155deg, rgba(16, 51, 70, 0.9), rgba(7, 26, 40, 0.94));
+            box-shadow: 0 18px 46px rgba(1, 11, 19, 0.28);
+            transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+        }
+
+        .sheet-music-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(119, 211, 245, 0.46);
+            box-shadow: 0 26px 60px rgba(1, 11, 19, 0.4);
+        }
+
+        .sheet-music-cover {
+            position: relative;
+            min-height: 13rem;
+            overflow: hidden;
+            background: #102f43;
+        }
+
+        .sheet-music-cover::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 48%, rgba(4, 20, 32, 0.35));
+            pointer-events: none;
+        }
+
+        .sheet-music-cover img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            transition: transform 450ms ease, filter 300ms ease;
+        }
+
+        .sheet-music-card:hover .sheet-music-cover img {
+            transform: scale(1.035);
+            filter: saturate(1.08) contrast(1.03);
+        }
+
+        .sheet-badge {
+            position: absolute;
+            z-index: 2;
+            right: 1rem;
+            bottom: 1rem;
+            padding: 0.38rem 0.72rem;
+            border: 1px solid rgba(255, 255, 255, 0.62);
+            border-radius: 999px;
+            color: #09283a;
+            background: rgba(255, 255, 255, 0.9);
+            font-size: 0.68rem;
+            font-weight: 800;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            backdrop-filter: blur(8px);
+        }
+
+        .sheet-meta {
+            padding: 1.25rem 1.35rem 1.4rem;
+        }
+
+        #rolling-sky .group,
+        #dancing-line .group {
+            border-color: var(--line) !important;
+            border-radius: 1.35rem !important;
+            background: linear-gradient(150deg, rgba(14, 47, 66, 0.86), rgba(7, 25, 39, 0.92)) !important;
+            box-shadow: 0 18px 48px rgba(1, 12, 21, 0.24) !important;
+            transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease !important;
+        }
+
+        #rolling-sky .group:hover,
+        #dancing-line .group:hover {
+            transform: translateY(-5px);
+            border-color: rgba(119, 211, 245, 0.42) !important;
+            box-shadow: 0 24px 54px rgba(1, 12, 21, 0.36) !important;
+        }
+
+        footer {
+            background: linear-gradient(180deg, #06131f, #030b12) !important;
+            border-color: rgba(179, 220, 238, 0.1) !important;
+        }
+
+        .site-mascot img {
+            width: clamp(8rem, 14vw, 12rem) !important;
+            height: clamp(8rem, 14vw, 12rem) !important;
+            filter: drop-shadow(0 10px 18px rgba(8, 28, 45, 0.4)) !important;
+            opacity: 0.92;
+        }
+
+        @media (max-width: 767px) {
+            .content-section { scroll-margin-top: 5rem; }
+            .site-mascot img {
+                width: 7rem !important;
+                height: 7rem !important;
+                opacity: 0.84;
+            }
         }
 
         /* ---  88鍵鋼琴樣式 --- */
@@ -313,6 +589,135 @@
             0%, 100% { transform: translateY(0) rotate(0deg); }
             50% { transform: translateY(-10px) rotate(5deg); }
         }
+
+        .anniversary-copy {
+            width: min(92vw, 620px);
+        }
+
+        .anniversary-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+            color: #fff;
+            font-weight: 800;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            text-shadow: 0 2px 10px rgba(0, 31, 67, 0.9);
+        }
+
+        .hero-title {
+            font-size: clamp(2.2rem, 4.8vw, 3.25rem) !important;
+            margin-top: 0.5rem !important;
+            color: #fff;
+            text-shadow: 0 3px 18px rgba(0, 28, 66, 0.9), 0 1px 2px rgba(0, 28, 66, 0.8);
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 2.5vw, 1.6rem) !important;
+            color: #ffedaa;
+            text-shadow: 0 2px 12px rgba(0, 28, 66, 0.9);
+        }
+
+        .hero-slogan {
+            margin-top: 0.35rem !important;
+            color: #fff;
+            text-shadow: 0 2px 12px rgba(0, 24, 61, 0.95), 0 1px 2px rgba(0, 24, 61, 0.8);
+        }
+
+        .hero-button-primary,
+        .hero-button-secondary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.55rem;
+            min-width: 10.5rem;
+            padding: 0.65rem 1.1rem;
+            border-radius: 999px;
+            font-weight: 800;
+            transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+        }
+
+        .hero-button-primary {
+            color: #06344f;
+            background: linear-gradient(135deg, #fef3c7, #f59e0b);
+            box-shadow: 0 10px 30px rgba(245, 158, 11, 0.3);
+        }
+
+        .hero-button-secondary {
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.72);
+            background: rgba(3, 35, 65, 0.36);
+        }
+
+        #home .hero-button-secondary {
+            border-color: rgba(255, 190, 201, 0.9);
+            background: linear-gradient(135deg, #e43c60, #a8113c);
+            box-shadow: 0 10px 30px rgba(136, 13, 49, 0.36);
+        }
+
+        .hero-button-primary:hover,
+        .hero-button-secondary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 34px rgba(2, 132, 199, 0.28);
+        }
+
+        #home .hero-button-secondary:hover {
+            box-shadow: 0 14px 34px rgba(136, 13, 49, 0.48);
+        }
+
+        .hero-actions {
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+        }
+
+        @media (max-width: 768px) {
+            #home {
+                min-height: calc(100svh - 80px);
+                background-position: 37% center;
+            }
+
+            #home > div {
+                min-height: calc(100svh - 80px);
+                padding-top: 1rem;
+                padding-bottom: 1.5rem;
+            }
+
+            .anniversary-copy {
+                width: calc(100vw - 2rem);
+            }
+
+            .anniversary-kicker {
+                font-size: 0.65rem;
+            }
+
+            .hero-title {
+                margin-top: 0.55rem !important;
+                font-size: 1.95rem !important;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem !important;
+            }
+
+            .anniversary-copy > p.lang-text {
+                margin-top: 0.35rem !important;
+                font-size: 0.75rem !important;
+            }
+
+            .hero-actions {
+                display: grid !important;
+                grid-template-columns: 1fr 1fr;
+                gap: 0.5rem;
+            }
+
+            .hero-button-primary,
+            .hero-button-secondary {
+                min-width: 0;
+                padding: 0.6rem 0.5rem;
+                font-size: 0.72rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -329,17 +734,20 @@
     <div class="h-20 md:h-[140px]"></div>
 
     <!-- 頂部導航欄 (固定) -->
-    <nav class="fixed top-0 left-0 w-full z-50 bg-slate-900/95 backdrop-blur-md border-b border-slate-700 h-20 flex items-center justify-between px-6">
+    <nav class="site-nav fixed top-0 left-0 w-full z-50 backdrop-blur-xl border-b h-20 flex items-center justify-between px-6">
         <div class="flex items-center">
-                <img src="https://cdn.jsdelivr.net/gh/Dandelion206/TheFlyingTree-Official-Website@main/pfp.jpeg" class="w-10 h-10 rounded-full object-cover border-2 border-cyan-500 mr-3">
-                <span class="font-gaming text-2xl font-bold text-white tracking-wider">TheFlyingTree</span>
+                <img src="https://cdn.jsdelivr.net/gh/Dandelion206/TheFlyingTree-Official-Website@main/pfp.jpeg" alt="TheFlyingTree profile picture" class="w-10 h-10 rounded-full object-cover border-2 border-cyan-300 mr-3 shadow-md shadow-cyan-400/20">
+                <div>
+                    <span class="block font-gaming text-xl md:text-2xl font-bold text-white tracking-wider leading-none">TheFlyingTree</span>
+                    <span class="block mt-1 text-[10px] uppercase tracking-[0.28em] text-amber-300">9th Anniversary</span>
+                </div>
         </div>
         <!-- 手機版按鈕 -->
-        <button id="mobile-menu-btn" class="md:hidden text-white focus:outline-none">
+        <button id="mobile-menu-btn" class="lg:hidden text-white focus:outline-none">
             <i class="fas fa-bars text-2xl"></i>
         </button>
 
-        <div class="hidden md:flex items-center space-x-8">
+        <div class="desktop-navigation hidden lg:flex items-center space-x-3 whitespace-nowrap">
             <a href="#home" class="text-gray-300 hover:text-amber-400 px-3 py-2 rounded-md text-sm font-bold transition lang-text" data-zh="首頁"  data-zh-cn="首页" data-en="Home" data-ja="ホーム" data-ko="홈">首頁</a>
             <a href="#piano-zone" class="text-gray-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-bold transition lang-text" data-zh="鋼琴專區" data-zh-cn="钢琴专区" data-en="Piano Zone" data-ja="ピアノゾーン" data-ko="피아노 존">鋼琴專區</a>
             <a href="#rolling-sky" class="text-gray-300 hover:text-amber-400 px-3 py-2 rounded-md text-sm font-bold transition lang-text" data-zh="滾動的天空" data-zh-cn="滚动的天空" data-en="Rolling Sky" data-ja="Rolling Sky" data-ko="Rolling Sky">滾動的天空</a>
@@ -359,7 +767,7 @@
         </div>
 
         <!-- [新增] 手機版下拉選單 -->
-        <div id="mobile-menu" class="w-full md:hidden bg-slate-900 absolute top-20 left-0 border-b border-slate-700 shadow-xl flex flex-col items-center py-4 space-y-4">
+        <div id="mobile-menu" class="w-full lg:hidden bg-sky-950/95 backdrop-blur-xl absolute top-20 left-0 border-b border-cyan-300/30 shadow-xl flex flex-col items-center py-4 space-y-4">
             <a href="#home" class="text-gray-300 hover:text-amber-400 font-bold transition w-full text-center py-2 lang-text" data-zh="首頁" data-zh-cn="首页" data-en="Home" data-ja="ホーム" data-ko="홈">首頁</a>
             <a href="#piano-zone" class="text-gray-300 hover:text-blue-400 font-bold transition w-full text-center py-2 lang-text" data-zh="鋼琴專區" data-zh-cn="钢琴专区" data-en="Piano Zone" data-ja="ピアノゾーン" data-ko="피아노 존">鋼琴專區</a>
             <a href="#sheet-music" class="text-gray-300 hover:text-blue-400 font-bold transition w-full text-center py-2 lang-text" data-zh="樂譜" data-zh-cn="乐谱" data-en="Sheet Music" data-ja="楽譜" data-ko="악보">樂譜</a>
@@ -381,54 +789,47 @@
     </nav>
 
     <!-- 首頁封面 -->
-    <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
-        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
-            <div class="mb-4 text-amber-300 text-4xl flex justify-center gap-8 opacity-80">
-                <i class="fas fa-music floating-note" style="animation-delay: 0s;"></i>
-                <i class="fas fa-headphones floating-note" style="animation-delay: 1s;"></i>
-                <i class="fas fa-compact-disc floating-note" style="animation-delay: 0.5s;"></i>
+    <section id="home" class="relative flex items-start justify-center overflow-hidden">
+        <div class="relative z-10 text-center px-4 mx-auto">
+            <div class="anniversary-copy">
+                <div class="anniversary-kicker text-xs md:text-sm">
+                    <i class="fas fa-music" aria-hidden="true"></i>
+                    <span>Since 2017</span>
+                </div>
+
+                <h1 class="hero-title font-gaming text-4xl md:text-6xl font-bold mt-4 tracking-wide">TheFlyingTree</h1>
+                <p class="hero-subtitle font-gaming text-2xl md:text-3xl font-bold mt-1 tracking-[0.12em]">9th Anniversary</p>
+
+                <p class="hero-slogan mt-3 text-sm md:text-lg font-semibold lang-text"
+                   data-zh="在雲端相遇，讓旋律繼續飛翔。"
+                   data-en="Meet above the clouds, and let the melody keep flying."
+                   data-zh-cn="在云端相遇，让旋律继续飞翔。"
+                   data-ja="雲の上で出会い、旋律をこれからも羽ばたかせよう。"
+                   data-ko="구름 위에서 만나, 멜로디가 계속 날아오르게 해요.">
+                    在雲端相遇，讓旋律繼續飛翔。
+                </p>
             </div>
 
-            <!-- 標題-->
-            <h1 class="font-gaming text-5xl md:text-7xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-cyan-500 to-blue-600 neon-text animate-pulse lang-text" data-zh="TheFlyingTree" data-en="TheFlyingTree">
-                TheFlyingTree
-            </h1>
-            
-            <p class="text-xl md:text-2xl text-gray-300 mb-8 font-bold lang-text" 
-               data-zh="ACG鋼琴改編/扒譜" 
-               data-en="ACG Piano Arranger/Transcriber"
-               data-zh-cn="ACG钢琴改编/扒谱"
-               data-ja="ACGピアノアレンジ/楽譜作成"
-               data-ko="ACG 피아노 편곡/악보 제작">               
-                ACG鋼琴改編/扒譜
-            </p>
-            <!--
-            <p class="text-lg md:text-xl text-gray-400 mb-8 lang-text"
-               data-zh="Rolling Sky & Dancing Line 頂尖攻略"
-               data-en="Top tier guides for Rolling Sky & Dancing Line">
-                Rolling Sky & Dancing Line 頂尖攻略
-            </p>
-             -->
-            
-
-            <div class="flex justify-center gap-4">
-                <!-- 按鈕顏色 -->
-                <a href="#piano-zone" class="px-8 py-3 border-2 border-amber-500 text-amber-400 rounded-full hover:bg-amber-500/20 transition duration-300 font-gaming tracking-widest font-bold lang-text" data-zh="觀看影片" data-en="Watch Videos" data-zh-cn="观看影片" data-ja="ビデオを見る" data-ko="동영상 보기">
-                    觀看影片
+            <div class="hero-actions">
+                <a href="#piano-zone" class="hero-button-primary lang-text" data-zh="欣賞鋼琴作品" data-en="Explore Piano Works" data-zh-cn="欣赏钢琴作品" data-ja="ピアノ作品を見る" data-ko="피아노 작품 보기">
+                    欣賞鋼琴作品
+                </a>
+                <a href="https://www.youtube.com/@TheFlyingTree2809/" target="_blank" rel="noopener" class="hero-button-secondary lang-text" data-zh="訂閱 YouTube" data-en="Subscribe on YouTube" data-zh-cn="订阅 YouTube" data-ja="YouTubeで登録" data-ko="YouTube 구독">
+                    訂閱 YouTube
                 </a>
             </div>
         </div>
     </section>
 
     <!-- 公告專區 -->
-<section id="announcement-zone" class="py-20 relative bg-slate-900/50">
+<section id="announcement-zone" class="content-section py-20 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- 標題區 -->
         <div class="text-center mb-16 reveal">
-            <h2 class="font-sans text-4xl font-bold text-orange-400 mb-4">
+            <h2 class="section-heading text-4xl mb-4">
                 ANNOUNCEMENTS
             </h2>
-            <div class="h-1 w-20 bg-orange-500 mx-auto rounded-full"></div>
+            <div class="section-rule mx-auto rounded-full"></div>
             <p class="mt-4 text-gray-400 font-medium lang-text" 
                data-zh="最新消息與公告" data-en="Latest News & Announcements" data-zh-cn="最新消息与公告" data-ja="最新ニュースとお知らせ" data-ko="최신 뉴스 및 공지사항">
                最新消息與公告
@@ -436,24 +837,36 @@
         </div>
 
         <div id="latest-announcements" class="space-y-6">
-            <div class="bg-slate-800/80 rounded-xl p-6 border-t-4 border-orange-500 -translate-y-2 transition duration-300 mb-4 reveal">
-                    <h3 class="text-xl font-bold text-white mb-3 lang-text" data-zh="樂譜製作" data-en="Sheet Music Making" data-zh-cn="乐谱制作" data-ja="楽譜制作" data-ko="악보 제작">樂譜製作</h3>
-                    <p class="text-gray-300 leading-relaxed mb-4 lang-text" data-zh="世界計劃劇場版插入曲《你好，世界》的樂譜現已上綫" data-en="Sheet music for COLORFUL STAGE! The Movie: A Miku Who Can't Sing - 'Hello, World' is now available" data-zh-cn="《世界计划》剧场版插入曲《你好，世界》的乐谱现已上线" data-ja="劇場版プロセカ挿入曲『ハローセカイ』の楽譜が現在配信中です" data-ko="컬러풀 스테이지! 더 무비 삽입곡 '헬로, 월드' 악보가 현재 배포 중입니다">
-                        世界計劃劇場版插入曲《你好，世界》的樂譜現已上綫
-                    </p>
-                    <p class="text-gray-400 text-sm mb-4">Link: <a href="#" class="text-blue-400 hover:text-blue-300 underline">https://www.mymusic5.com/7h3F1yin97r33/371171</a></p>
-                    <span class="text-sm text-orange-400">2026-03-29</span>
+            <div class="announcement-card reveal">
+                <span class="eyebrow"><i class="fas fa-music"></i> New sheet music</span>
+                <h3 class="font-sans text-2xl md:text-3xl text-white mt-4 mb-3 lang-text"
+                    data-zh="《ENDROLL》鋼琴譜"
+                    data-en="ENDROLL — Piano Sheet Music"
+                    data-zh-cn="《ENDROLL》钢琴谱"
+                    data-ja="『ENDROLL』ピアノ楽譜"
+                    data-ko="ENDROLL 피아노 악보">
+                    《ENDROLL》鋼琴譜
+                </h3>
+                <p class="max-w-3xl text-slate-300 leading-relaxed mb-6 lang-text"
+                    data-zh="《ENDROLL》的鋼琴獨奏編曲，已於 2026 年 8 月在 MyMusic5 上架。"
+                    data-en="A piano-solo arrangement of ENDROLL, published on MyMusic5 in August 2026."
+                    data-zh-cn="《ENDROLL》的钢琴独奏编曲，已于 2026 年 8 月在 MyMusic5 上架。"
+                    data-ja="『ENDROLL』のピアノソロ編曲を、2026年8月にMyMusic5で公開しました。"
+                    data-ko="ENDROLL의 피아노 솔로 편곡을 2026년 8월 MyMusic5에 공개했습니다.">
+                    《ENDROLL》的鋼琴獨奏編曲，已於 2026 年 8 月在 MyMusic5 上架。
+                </p>
+                <div class="flex flex-wrap items-center gap-x-6 gap-y-3">
+                    <a href="https://www.mymusic5.com/7h3f1yin97r33/507353" target="_blank" rel="noopener" class="text-link">
+                        <span class="lang-text" data-zh="查看樂譜" data-en="View sheet music" data-zh-cn="查看乐谱" data-ja="楽譜を見る" data-ko="악보 보기">查看樂譜</span>
+                        <i class="fas fa-arrow-right text-xs"></i>
+                    </a>
+                    <a href="https://www.mymusic5.com/7h3f1yin97r33" target="_blank" rel="noopener" class="text-sm text-slate-400 hover:text-white transition lang-text"
+                       data-zh="瀏覽全部 8 份樂譜" data-en="Browse all 8 arrangements" data-zh-cn="浏览全部 8 份乐谱" data-ja="全8曲の楽譜を見る" data-ko="8개 악보 모두 보기">瀏覽全部 8 份樂譜</a>
+                    <span class="text-sm text-slate-500">2026-08-22</span>
+                </div>
             </div>
 
-            <div class="bg-slate-800/80 rounded-xl p-6 border-t-4 border-orange-500 -translate-y-2 transition duration-300 mb-4 reveal">
-                    <h3 class="text-xl font-bold text-white mb-3 lang-text" data-zh="樂譜製作" data-en="Sheet Music Making" data-zh-cn="乐谱制作" data-ja="楽譜制作" data-ko="악보 제작">樂譜製作</h3>
-                    <p class="text-gray-300 leading-relaxed mb-4 lang-text" data-zh="世界計劃劇場版插入曲《你好，世界》的樂譜正在製作中" data-en="Sheet music for COLORFUL STAGE! The Movie: A Miku Who Can't Sing - 'Hello, World' is in progress" data-zh-cn="《世界计划》剧场版插入曲《你好，世界》的乐谱正在制作中" data-ja="劇場版プロセカ挿入曲『ハローセカイ』の楽譜を製作中です" data-ko="컬러풀 스테이지! 더 무비 삽입곡 '헬로, 월드' 악보가 제작 중입니다">
-                        世界計劃劇場版插入曲《你好，世界》的樂譜正在製作中
-                    </p>
-                    <span class="text-sm text-orange-400">2025-11-30</span>
-            </div>
-
-            <div class="bg-red-900/40 backdrop-blur-sm rounded-xl p-6 border-t-4 border-red-500 -translate-y-2 transition duration-300 reveal ring-1 ring-red-500/50">
+            <div class="rounded-3xl p-6 md:p-8 bg-rose-950/25 border border-rose-300/15 reveal">
                 <h3 class="text-2xl font-bold text-red-400 mb-4 lang-text"
                     data-zh="關於近期侵權行為的重要聲明"
                     data-zh-cn="关于近期侵权行为的重要声明"
@@ -581,7 +994,55 @@
         </div>
 
         <div id="older-announcements" class="space-y-6 mt-8 hidden">
-            <div class="bg-slate-800/80 rounded-xl p-6 border-t-4 border-orange-500 -translate-y-2 transition duration-300 mb-4 reveal">
+            <div class="announcement-card reveal">
+                <span class="eyebrow"><i class="fas fa-music"></i> Sheet music</span>
+                <h3 class="text-xl font-bold text-white mb-3 lang-text"
+                    data-zh="樂譜製作"
+                    data-en="Sheet Music Making"
+                    data-zh-cn="乐谱制作"
+                    data-ja="楽譜制作"
+                    data-ko="악보 제작">
+                    樂譜製作
+                </h3>
+                <p class="text-gray-300 leading-relaxed mb-4 lang-text"
+                   data-zh="世界計劃劇場版插入曲《你好，世界》的樂譜現已上綫"
+                   data-en="Sheet music for COLORFUL STAGE! The Movie: A Miku Who Can't Sing — ‘Hello, World’ is now available."
+                   data-zh-cn="《世界计划》剧场版插入曲《你好，世界》的乐谱现已上线"
+                   data-ja="劇場版プロセカ挿入曲『ハローセカイ』の楽譜が現在配信中です"
+                   data-ko="컬러풀 스테이지! 더 무비 삽입곡 ‘헬로, 월드’ 악보가 현재 배포 중입니다">
+                    世界計劃劇場版插入曲《你好，世界》的樂譜現已上綫
+                </p>
+                <div class="flex flex-wrap items-center gap-x-6 gap-y-3">
+                    <a href="https://www.mymusic5.com/7h3F1yin97r33/371171" target="_blank" rel="noopener" class="text-link">
+                        <span class="lang-text" data-zh="查看樂譜" data-en="View sheet music" data-zh-cn="查看乐谱" data-ja="楽譜を見る" data-ko="악보 보기">查看樂譜</span>
+                        <i class="fas fa-arrow-right text-xs"></i>
+                    </a>
+                    <span class="text-sm text-slate-500">2026-03-29</span>
+                </div>
+            </div>
+
+            <div class="announcement-card reveal">
+                <span class="eyebrow"><i class="fas fa-pen-nib"></i> Sheet music</span>
+                <h3 class="text-xl font-bold text-white mb-3 lang-text"
+                    data-zh="樂譜製作"
+                    data-en="Sheet Music Making"
+                    data-zh-cn="乐谱制作"
+                    data-ja="楽譜制作"
+                    data-ko="악보 제작">
+                    樂譜製作
+                </h3>
+                <p class="text-gray-300 leading-relaxed mb-4 lang-text"
+                   data-zh="世界計劃劇場版插入曲《你好，世界》的樂譜正在製作中"
+                   data-en="Sheet music for COLORFUL STAGE! The Movie: A Miku Who Can't Sing — ‘Hello, World’ is in progress."
+                   data-zh-cn="《世界计划》剧场版插入曲《你好，世界》的乐谱正在制作中"
+                   data-ja="劇場版プロセカ挿入曲『ハローセカイ』の楽譜を製作中です"
+                   data-ko="컬러풀 스테이지! 더 무비 삽입곡 ‘헬로, 월드’ 악보가 제작 중입니다">
+                    世界計劃劇場版插入曲《你好，世界》的樂譜正在製作中
+                </p>
+                <span class="text-sm text-orange-400">2025-11-30</span>
+            </div>
+
+            <div class="announcement-card reveal">
                     <h3 class="text-xl font-bold text-white mb-3 lang-text" data-zh="網站正式上線！" data-en="Website Officially Launched!" data-zh-cn="网站正式上线！" data-ja="ウェブサイト正式公開！" data-ko="웹사이트 공식 출시!">網站正式上線！</h3>
                     <p class="text-gray-300 leading-relaxed mb-4 lang-text" data-zh="歡迎來到我的全新網站！" data-en="Welcome to my brand new website!" data-zh-cn="欢迎来到我的全新网站！" data-ja="私の新しいウェブサイトへようこそ！" data-ko="나의 새로운 웹사이트에 오신 것을 환영합니다!">
                         歡迎來到我的全新網站！
@@ -604,23 +1065,23 @@
 </section>
 
     <!-- 鋼琴影片專區 (藍色主題) -->
-    <section id="piano-zone" class="py-20 relative bg-slate-900/50">
+    <section id="piano-zone" class="content-section py-20 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 reveal">
                 <!--  藍色標題 -->
-                <h2 class="font-sans text-4xl font-bold text-blue-400 mb-4">PIANO COVERS</h2>
-                <div class="h-1 w-20 bg-blue-500 mx-auto rounded-full"></div>
+                <h2 class="section-heading text-4xl mb-4">PIANO COVERS</h2>
+                <div class="section-rule mx-auto rounded-full"></div>
                 <p class="mt-4 text-gray-400 font-medium lang-text" data-zh="遊戲原聲帶鋼琴改編" data-en="Game OST Piano Covers" data-zh-cn="游戏原声带钢琴改编" data-ja="ゲームOSTピアノカバー" data-ko="게임 OST 피아노 커버">遊戲原聲帶鋼琴改編</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <!-- 鋼琴影片 1 -->
                 <a href="https://www.youtube.com/watch?v=St-gqciGTf0" target="_blank" rel="noopener" class="block">
-                     <div class="bg-slate-800/80 rounded-xl p-4 border-t-4 border-blue-500 hover:translate-y-2 transition duration-300 reveal cursor-pointer">
+                     <div class="surface-card reveal cursor-pointer">
                          <div class="aspect-video bg-black rounded-lg overflow-hidden relative mb-4">
                               <div class="aspect-video bg-black rounded-lg overflow-hidden relative mb-4">
                                      <img src="https://img.youtube.com/vi/St-gqciGTf0/maxresdefault.jpg" 
-                                         alt="Rolling Sky - Halloween"
+                                         alt="Proi Proi piano arrangement"
                                          class="w-full h-full object-cover transition duration-300 group-hover:brightness-75">
 
                                  <!-- Play icon overlay -->
@@ -631,22 +1092,22 @@
                              </div> 
                          </div>
                          <span class="text-xs font-bold text-amber-900 bg-amber-400 px-2 py-1 rounded-full uppercase">Hot</span>
-                         <h3 class="text-lg font-bold text-white hover:text-blue-400 transition lang-text" 
-                             data-zh="拂曉 - 鋼琴改編" data-en="Proi Proi Piano Arrangement" data-zh-cn="拂晓 - 钢琴改编">
-                             拂曉 - 鋼琴改編
+                         <h3 class="text-lg font-bold text-white hover:text-blue-400 transition lang-text"
+                             data-zh="拂曉 · 鋼琴改編" data-zh-cn="拂晓 · 钢琴改编" data-en="Proi Proi · Piano Arrangement" data-ja="払暁 · ピアノアレンジ" data-ko="Proi Proi · 피아노 편곡">
+                             拂曉 · 鋼琴改編
                          </h3>
-                        <h4 class="mt-2 text-slate-400 text-sm lang-text" data-zh="崩壞：星穹鐵道EP" data-en="Honkai: Star Rail EP" data-zh-cn="崩坏：星穹铁道EP">崩壞:星穹鐵道EP</h4>
+                        <h4 class="mt-2 text-slate-400 text-sm lang-text" data-zh="崩壞：星穹鐵道 EP" data-zh-cn="崩坏：星穹铁道 EP" data-en="Honkai: Star Rail EP" data-ja="崩壊：スターレイル EP" data-ko="붕괴: 스타레일 EP">崩壞：星穹鐵道 EP</h4>
                         
                      </div>
                  </a>
 
                 <!-- 鋼琴影片 2 -->
                 <a href="https://www.youtube.com/watch?v=eQKDUYxWf58" target="_blank" rel="noopener" class="block">
-                     <div class="bg-slate-800/80 rounded-xl p-4 border-t-4 border-blue-500 hover:translate-y-2 transition duration-300 reveal cursor-pointer">
+                     <div class="surface-card reveal cursor-pointer">
                          <div class="aspect-video bg-black rounded-lg overflow-hidden relative mb-4">
                               <div class="aspect-video bg-black rounded-lg overflow-hidden relative mb-4">
                                      <img src="https://img.youtube.com/vi/eQKDUYxWf58/maxresdefault.jpg" 
-                                         alt="Rolling Sky - Halloween"
+                                         alt="End of All piano arrangement"
                                          class="w-full h-full object-cover transition duration-300 group-hover:brightness-75">
 
                                  <!-- Play icon overlay -->
@@ -656,21 +1117,21 @@
                                  </div>
                              </div> 
                          </div>
-                         <h3 class="text-lg font-bold text-white hover:text-blue-400 transition lang-text" 
-                             data-zh="「終焉」×「End of All」 - 鋼琴改編" data-en="End of All Piano Arrangement" data-zh-cn="「终焉」×「End of All」 - 钢琴改编">
-                             「終焉」×「End of All」 - 鋼琴改編
+                         <h3 class="text-lg font-bold text-white hover:text-blue-400 transition lang-text"
+                             data-zh="「終焉」×「End of All」· 鋼琴改編" data-zh-cn="「终焉」×「End of All」· 钢琴改编" data-en="終焉 × End of All · Piano Arrangement" data-ja="終焉 × End of All · ピアノアレンジ" data-ko="終焉 × End of All · 피아노 편곡">
+                             「終焉」×「End of All」· 鋼琴改編
                          </h3>
-                         <h4 class="mt-2 text-slate-400 text-sm lang-text" data-zh="原神" data-en="Genshin Impact" data-zh-cn="原神">原神</h4>
+                         <h4 class="mt-2 text-slate-400 text-sm lang-text" data-zh="原神" data-zh-cn="原神" data-en="Genshin Impact" data-ja="原神" data-ko="원신">原神</h4>
                      </div>
                  </a>
 
                 <!-- 鋼琴影片 3 -->
                  <a href="https://www.youtube.com/watch?v=MwxdfRdU8wY" target="_blank" rel="noopener" class="block">
-                     <div class="bg-slate-800/80 rounded-xl p-4 border-t-4 border-blue-500 hover:translate-y-2 transition duration-300 reveal cursor-pointer">
+                     <div class="surface-card reveal cursor-pointer">
                          <div class="aspect-video bg-black rounded-lg overflow-hidden relative mb-4">
                               <div class="aspect-video bg-black rounded-lg overflow-hidden relative mb-4">
                                      <img src="https://img.youtube.com/vi/MwxdfRdU8wY/maxresdefault.jpg" 
-                                         alt="Rolling Sky - Halloween"
+                                         alt="Nod-Krai piano arrangement"
                                          class="w-full h-full object-cover transition duration-300 group-hover:brightness-75">
 
                                  <!-- Play icon overlay -->
@@ -680,11 +1141,11 @@
                                  </div>
                              </div> 
                          </div>
-                         <h3 class="text-lg font-bold text-white hover:text-blue-400 transition lang-text" 
-                             data-zh="挪德卡萊主題曲 - 鋼琴改編" data-en="Nod-Krai Main Theme Piano Arrangement">
-                             挪德卡萊主題曲 - 鋼琴改編
+                         <h3 class="text-lg font-bold text-white hover:text-blue-400 transition lang-text"
+                             data-zh="挪德卡萊主題曲 · 鋼琴改編" data-zh-cn="挪德卡莱主题曲 · 钢琴改编" data-en="Nod-Krai Main Theme · Piano Arrangement" data-ja="ナド・クライ メインテーマ · ピアノアレンジ" data-ko="노드크라이 메인 테마 · 피아노 편곡">
+                             挪德卡萊主題曲 · 鋼琴改編
                          </h3>
-                         <h4 class="mt-2 text-slate-400 text-sm lang-text" data-zh="原神:空月之歌" data-en="Genshin Impact">原神：空月之歌</h4>
+                         <h4 class="mt-2 text-slate-400 text-sm lang-text" data-zh="原神：空月之歌" data-zh-cn="原神：空月之歌" data-en="Genshin Impact: Song of the Welkin Moon" data-ja="原神：空月の歌" data-ko="원신: 공월의 노래">原神：空月之歌</h4>
                      </div>
                  </a>
             </div>
@@ -692,78 +1153,72 @@
     </section>
 
     
-    <section id="sheet-music" class="py-16 relative bg-slate-900/70 border-t border-slate-800">
+    <section id="sheet-music" class="content-section py-20 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12 reveal">
-                <h2 class="font-sans text-3xl font-bold text-blue-300 mb-4 lang-text" data-zh="樂譜下載" data-en="SHEET MUSIC" data-zh-cn="乐谱下载" data-ja="楽譜ダウンロード" data-ko="악보 다운로드">樂譜下載</h2>
-                <div class="h-0.5 w-16 bg-blue-500/50 mx-auto rounded-full"></div>
-                <p class="mt-3 text-gray-400 text-sm font-medium lang-text" data-zh="獲取代應上方影片的鋼琴譜" data-en="Get the sheet music for the covers above" data-zh-cn="获取对应上方影片的钢琴谱" data-ja="上の動画に対応する楽譜を入手する" data-ko="위 동영상에 해당하는 피아노 악보를 받으세요">獲取代應上方影片的鋼琴譜</p>
+            <div class="text-center mb-14 reveal">
+                <h2 class="section-heading text-4xl mb-4 lang-text" data-zh="樂譜精選" data-en="SHEET MUSIC" data-zh-cn="乐谱精选" data-ja="楽譜セレクション" data-ko="악보 셀렉션">樂譜精選</h2>
+                <div class="section-rule mx-auto rounded-full"></div>
+                <p class="mt-4 text-slate-400 font-medium lang-text" data-zh="最新鋼琴獨奏編曲 · 按發佈日期排列" data-en="Latest piano-solo arrangements · newest first" data-zh-cn="最新钢琴独奏编曲 · 按发布日期排列" data-ja="最新のピアノソロ編曲 · 公開日順" data-ko="최신 피아노 솔로 편곡 · 최신순">最新鋼琴獨奏編曲 · 按發佈日期排列</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-                <div class="sheet-music-card reveal">
-                    <a href="https://www.mymusicfive.com/7h3F1yin97r33/291366" target="_blank" rel="noopener" class="block">
-                        <div class="sheet-music-card reveal" style="animation-delay: 0.2s;">
-                            <div class="sheet-music-cover">
-                                <img src="https://imgproxy.mapia.io/prebuild/490d4fae680d0a8ba2819ad8a5a28958" alt="Rolling Sky Halloween Sheet Music Cover" class="w-full h-full object-cover opacity-80 hover:opacity-100 transition">
-                                <div class="absolute top-2 right-2 bg-blue-600 text-white text-xs px-2 py-1 rounded-full">PDF</div>
-                            </div>
-                            <h3 class="text-md font-bold text-white truncate lang-text" data-zh="拂曉 - 鋼琴改編" data-en="Proi Proi Piano Arrangement" data-zh-cn="拂晓 - 钢琴改编">拂曉 - 鋼琴改編</h3>
-                            
-                            <div class="mymusic5-branding">
-                                <a href="https://www.mymusicfive.com/7h3F1yin97r33/" target="_blank" class="w-8 h-8 text-4xl text-white-500 hover:text-white-400 hover:scale-110 transition" title="MyMusic5">
-                                    <img src="https://imgproxy.mapia.io/static/mms/favicon/png/apple-icon-precomposed.png " alt="MyMusic5" class="w-8 h-8">
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                
-                <div class="sheet-music-card reveal">
-                    <a href="https://www.mymusicfive.com/7h3F1yin97r33/156010" target="_blank" rel="noopener" class="block">
-                        <div class="sheet-music-card reveal" style="animation-delay: 0.2s;">
-                            <div class="sheet-music-cover">
-                                <img src="https://imgproxy.mapia.io/prebuild/413b993712e04179884eb700fae36649" alt="Rolling Sky Halloween Sheet Music Cover" class="w-full h-full object-cover opacity-80 hover:opacity-100 transition">
-                                <div class="absolute top-2 right-2 bg-blue-600 text-white text-xs px-2 py-1 rounded-full">PDF</div>
-                            </div>
-                            <h3 class="text-md font-bold text-white truncate lang-text" data-zh="「終焉」×「End of All」 - 鋼琴改編" data-en="End of All Piano Arrangement" data-zh-cn="「终焉」×「End of All」 - 钢琴改编">「終焉」×「End of All」 - 鋼琴改編</h3>
-                            
-                            <div class="mymusic5-branding">
-                                <a href="https://www.mymusicfive.com/7h3F1yin97r33/" target="_blank" class="w-8 h-8 text-4xl text-white-500 hover:text-white-400 hover:scale-110 transition" title="MyMusic5">
-                                    <img src="https://imgproxy.mapia.io/static/mms/favicon/png/apple-icon-precomposed.png " alt="MyMusic5" class="w-8 h-8">
-                            </div>
-                        </div>
-                    </a>
-                </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <a href="https://www.mymusic5.com/7h3f1yin97r33/507353" target="_blank" rel="noopener" class="sheet-music-card reveal">
+                    <div class="sheet-music-cover">
+                        <img src="https://img.musicfive.com/v8/mms/s/w/967x1395/44b942ad77bb0957bd6753acde02e722-1.webp" alt="ENDROLL first-page sheet music preview" loading="lazy">
+                        <span class="sheet-badge">Latest</span>
+                    </div>
+                    <div class="sheet-meta">
+                        <p class="text-xs font-bold uppercase tracking-[0.15em] text-cyan-300">Hiroyuki Sawano · SennaRin · Yohei Kawakami</p>
+                        <h3 class="font-sans mt-2 text-xl text-white lang-text" data-zh="ENDROLL" data-zh-cn="ENDROLL" data-en="ENDROLL" data-ja="ENDROLL" data-ko="ENDROLL">ENDROLL</h3>
+                        <time datetime="2026-08-22" class="block mt-2 text-xs tracking-[0.1em] text-slate-500">2026-08-22</time>
+                        <p class="mt-2 text-sm text-slate-400 lang-text" data-zh="鋼琴獨奏 · 4 頁" data-en="Piano solo · 4 pages" data-zh-cn="钢琴独奏 · 4 页" data-ja="ピアノソロ · 4ページ" data-ko="피아노 솔로 · 4페이지">鋼琴獨奏 · 4 頁</p>
+                        <span class="text-link mt-5"><span class="lang-text" data-zh="查看樂譜" data-en="View score" data-zh-cn="查看乐谱" data-ja="楽譜を見る" data-ko="악보 보기">查看樂譜</span><i class="fas fa-arrow-right text-xs"></i></span>
+                    </div>
+                </a>
 
-                <div class="sheet-music-card reveal">
-                    <a href="https://www.mymusicfive.com/7h3F1yin97r33/321766" target="_blank" rel="noopener" class="block">
-                        <div class="sheet-music-card reveal" style="animation-delay: 0.2s;">
-                            <div class="sheet-music-cover">
-                                <img src="https://imgproxy.mapia.io/prebuild/48c678da73ba362a8d6b046f678b2042" alt="Rolling Sky Halloween Sheet Music Cover" class="w-full h-full object-cover opacity-80 hover:opacity-100 transition">
-                                <div class="absolute top-2 right-2 bg-blue-600 text-white text-xs px-2 py-1 rounded-full">PDF</div>
-                            </div>
-                            <h3 class="text-md font-bold text-white truncate lang-text" data-zh="挪德卡萊主題曲 - 鋼琴改編" data-en="Nod-Krai Main Theme Piano Arrangement" data-zh-cn="挪德卡莱主题曲 - 钢琴改编">挪德卡萊主題曲 - 鋼琴改編</h3>
-                            
-                            <div class="mymusic5-branding">
-                                <a href="https://www.mymusicfive.com/7h3F1yin97r33/" target="_blank" class="w-8 h-8 text-4xl text-white-500 hover:text-white-400 hover:scale-110 transition" title="MyMusic5">
-                                    <img src="https://imgproxy.mapia.io/static/mms/favicon/png/apple-icon-precomposed.png " alt="MyMusic5" class="w-8 h-8">
-                            </div>
-                        </div>
-                    </a>
-                </div>
+                <a href="https://www.mymusic5.com/7h3f1yin97r33/371171" target="_blank" rel="noopener" class="sheet-music-card reveal">
+                    <div class="sheet-music-cover">
+                        <img src="https://img.musicfive.com/v8/mms/s/w/480x693/42b554e8d0e092f09780a4add4601ba7-1.webp" alt="Hello, SEKAI first-page sheet music preview" loading="lazy">
+                    </div>
+                    <div class="sheet-meta">
+                        <p class="text-xs font-bold uppercase tracking-[0.15em] text-violet-300">DECO*27 · Project SEKAI</p>
+                        <h3 class="font-sans mt-2 text-xl text-white lang-text" data-zh="Hello, SEKAI" data-zh-cn="Hello, SEKAI" data-en="Hello, SEKAI" data-ja="ハローセカイ" data-ko="Hello, SEKAI">Hello, SEKAI</h3>
+                        <time datetime="2026-03-29" class="block mt-2 text-xs tracking-[0.1em] text-slate-500">2026-03-29</time>
+                        <p class="mt-2 text-sm text-slate-400 lang-text" data-zh="鋼琴獨奏 · 5 頁" data-en="Piano solo · 5 pages" data-zh-cn="钢琴独奏 · 5 页" data-ja="ピアノソロ · 5ページ" data-ko="피아노 솔로 · 5페이지">鋼琴獨奏 · 5 頁</p>
+                        <span class="text-link mt-5"><span class="lang-text" data-zh="查看樂譜" data-en="View score" data-zh-cn="查看乐谱" data-ja="楽譜を見る" data-ko="악보 보기">查看樂譜</span><i class="fas fa-arrow-right text-xs"></i></span>
+                    </div>
+                </a>
+
+                <a href="https://www.mymusic5.com/7h3F1yin97r33/321766" target="_blank" rel="noopener" class="sheet-music-card reveal">
+                    <div class="sheet-music-cover">
+                        <img src="https://img.musicfive.com/v8/mms/s/w/480x693/4c9e1c70eea57f52bc2123d4eafaa445-1.webp" alt="Nod-Krai first-page sheet music preview" loading="lazy">
+                    </div>
+                    <div class="sheet-meta">
+                        <p class="text-xs font-bold uppercase tracking-[0.15em] text-amber-300">HOYO-MiX · Genshin Impact</p>
+                        <h3 class="font-sans mt-2 text-xl text-white lang-text" data-zh="挪德卡萊" data-zh-cn="挪德卡莱" data-en="Nod-Krai" data-ja="ナド・クライ" data-ko="노드크라이">挪德卡萊</h3>
+                        <time datetime="2025-10-07" class="block mt-2 text-xs tracking-[0.1em] text-slate-500">2025-10-07</time>
+                        <p class="mt-2 text-sm text-slate-400 lang-text" data-zh="鋼琴獨奏 · 8 頁" data-en="Piano solo · 8 pages" data-zh-cn="钢琴独奏 · 8 页" data-ja="ピアノソロ · 8ページ" data-ko="피아노 솔로 · 8페이지">鋼琴獨奏 · 8 頁</p>
+                        <span class="text-link mt-5"><span class="lang-text" data-zh="查看樂譜" data-en="View score" data-zh-cn="查看乐谱" data-ja="楽譜を見る" data-ko="악보 보기">查看樂譜</span><i class="fas fa-arrow-right text-xs"></i></span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="mt-10 text-center reveal">
+                <a href="https://www.mymusic5.com/7h3f1yin97r33" target="_blank" rel="noopener" class="hero-button-secondary lang-text"
+                   data-zh="在 MyMusic5 查看全部樂譜" data-en="View all scores on MyMusic5" data-zh-cn="在 MyMusic5 查看全部乐谱" data-ja="MyMusic5で全楽譜を見る" data-ko="MyMusic5에서 전체 악보 보기">在 MyMusic5 查看全部樂譜</a>
             </div>
         </div>
     </section>
 
 
     <!-- [修改] 滾動的天空 區塊 (改成橙黃色主題) -->
-    <section id="rolling-sky" class="py-20 relative bg-slate-900/30">
+    <section id="rolling-sky" class="content-section py-20 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 reveal">
                 <!-- [修改] 文字顏色 orange-400 -->
-                <h2 class="font-sans text-4xl font-bold text-orange-400 mb-4">ROLLING SKY</h2>
+                <h2 class="section-heading text-4xl mb-4">ROLLING SKY</h2>
                 <!-- [修改] 裝飾線顏色 orange-500 -->
-                <div class="h-1 w-20 bg-orange-500 mx-auto rounded-full"></div>
+                <div class="section-rule mx-auto rounded-full"></div>
                 <p class="mt-4 text-gray-400 font-medium lang-text" data-zh="挑戰極限反應速度" data-en="Challenge Your Reaction Speed" data-zh-cn="挑战极限反应速度" data-ja="反応速度に挑戦する" data-ko="반응 속도에 도전하세요">挑戰極限反應速度</p>
             </div>
 
@@ -787,7 +1242,7 @@
                             
                             <!-- 標籤顏色 -->
                             <span class="text-xs font-bold text-orange-900 bg-orange-400 px-2 py-1 rounded-full uppercase">Fanmade Level</span>
-                            <h3 class="mt-3 text-xl font-bold text-white group-hover:text-orange-400 transition lang-text" data-zh="【滾動的天空】聯合飯製：太空之旅" data-en="Rolling Sky Fanmade/Edit Collab - Space Travel">【滾動的天空】聯合飯製：太空之旅</h3>
+                            <h3 class="mt-3 text-xl font-bold text-white group-hover:text-orange-400 transition lang-text" data-zh="【滾動的天空】聯合飯製：太空之旅" data-zh-cn="【滚动的天空】联合饭制：太空之旅" data-en="Rolling Sky Fanmade Collab · Space Travel" data-ja="Rolling Sky Fanmade Collab · Space Travel" data-ko="Rolling Sky Fanmade Collab · Space Travel">【滾動的天空】聯合飯製：太空之旅</h3>
                         </div>
                     </a>
                 </div>
@@ -797,7 +1252,7 @@
                     <a href="https://www.youtube.com/watch?v=Yu3bmySRO0M" target="_blank" rel="noopener" class="block">
                         <div class="relative aspect-video bg-black group-hover:opacity-90 transition">
                             <div class="absolute inset-0 flex items-center justify-center bg-slate-800">
-                                <img src="https://img.youtube.com/vi/Yu3bmySRO0M/maxresdefault.jpg" 
+                                <img src="https://img.youtube.com/vi/Yu3bmySRO0M/maxresdefault.jpg"
                                         alt="Rolling Sky - Happy Birthday Weekly Match"
                                         class="w-full h-full object-cover transition duration-300 group-hover:brightness-75">
                                 
@@ -810,7 +1265,7 @@
                             
                             <!-- 標籤顏色 -->
                             <span class="text-xs font-bold text-orange-900 bg-orange-400 px-2 py-1 rounded-full uppercase">Weekly Match</span>
-                            <h3 class="mt-3 text-xl font-bold text-white group-hover:text-orange-400 transition lang-text" data-zh="【滾動的天空】生日快樂周賽" data-en="Rolling Sky Happy Birthday Weekly Match">【滾動的天空】生日快樂周賽</h3>
+                            <h3 class="mt-3 text-xl font-bold text-white group-hover:text-orange-400 transition lang-text" data-zh="【滾動的天空】生日快樂周賽" data-zh-cn="【滚动的天空】生日快乐周赛" data-en="Rolling Sky · Happy Birthday Weekly Match" data-ja="Rolling Sky · Happy Birthday Weekly Match" data-ko="Rolling Sky · Happy Birthday Weekly Match">【滾動的天空】生日快樂周賽</h3>
                         </div>
                     </a>
                 </div>
@@ -820,8 +1275,8 @@
                     <a href="https://www.youtube.com/watch?v=NGSSwfO2hOg" target="_blank" rel="noopener" class="block">
                         <div class="relative aspect-video bg-black group-hover:opacity-90 transition">
                             <div class="absolute inset-0 flex items-center justify-center bg-slate-800">
-                                <img src="https://img.youtube.com/vi/NGSSwfO2hOg/hqdefault.jpg" 
-                                        alt="Rolling Sky - Happy Birthday Weekly Match"
+                                <img src="https://img.youtube.com/vi/NGSSwfO2hOg/hqdefault.jpg"
+                                        alt="Rolling Sky - Delicacy Temptation"
                                         class="w-full h-full object-cover transition duration-300 group-hover:brightness-75">
                                 
                                 <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
@@ -832,7 +1287,7 @@
                         <div class="p-6">
                             
                             <!--  標籤顏色 -->
-                            <h3 class="mt-3 text-xl font-bold text-white group-hover:text-orange-400 transition lang-text" data-zh="【滾動的天空】美食誘惑" data-en="Rolling Sky Level 49 - Delicacy Temptation">【滾動的天空】美食誘惑</h3>
+                            <h3 class="mt-3 text-xl font-bold text-white group-hover:text-orange-400 transition lang-text" data-zh="【滾動的天空】美食誘惑" data-zh-cn="【滚动的天空】美食诱惑" data-en="Rolling Sky · Delicacy Temptation" data-ja="Rolling Sky · Delicacy Temptation" data-ko="Rolling Sky · Delicacy Temptation">【滾動的天空】美食誘惑</h3>
                         </div>
                     </a>
             </div>
@@ -840,11 +1295,11 @@
     </section>
 
     <!-- 跳舞的線  -->
-    <section id="dancing-line" class="py-20 relative">
+    <section id="dancing-line" class="content-section py-20 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 reveal">
-                <h2 class="font-sans text-4xl font-bold text-purple-400 mb-4">DANCING LINE</h2>
-                <div class="h-1 w-20 bg-purple-500 mx-auto rounded-full"></div>
+                <h2 class="section-heading text-4xl mb-4">DANCING LINE</h2>
+                <div class="section-rule mx-auto rounded-full"></div>
                 <p class="mt-4 text-gray-400 font-medium lang-text" data-zh="跟著節奏點擊" data-en="Tap the Rhythm" data-zh-cn="跟着节奏点击" data-ja="リズムに合わせてタップ" data-ko="리듬에 맞춰 탭하세요">跟著節奏點擊</p>
             </div>
 
@@ -867,7 +1322,7 @@
                             
 
                             <span class="text-xs font-bold text-purple-900 bg-purple-400 px-2 py-1 rounded-full uppercase">Soundtrack Mashup</span>
-                            <h3 class="mt-3 text-xl font-bold text-white group-hover:text-purple-400 transition lang-text" data-zh="【跳舞的線混曲】戰殤 x The Despacito" data-en="Dancing Line Mashup - The War x The Despacito (Soundtrack)">【跳舞的線混曲】戰殤 x The Despacito</h3>
+                            <h3 class="mt-3 text-xl font-bold text-white group-hover:text-purple-400 transition lang-text" data-zh="【跳舞的線混曲】戰殤 × The Despacito" data-zh-cn="【跳舞的线混曲】战殇 × The Despacito" data-en="Dancing Line Mashup · The War × The Despacito" data-ja="Dancing Line Mashup · The War × The Despacito" data-ko="Dancing Line Mashup · The War × The Despacito">【跳舞的線混曲】戰殤 × The Despacito</h3>
                         </div>
                     </a>
                 </div>
@@ -887,7 +1342,7 @@
                             </div>
                         </div>
                         <div class="p-6">
-                            <h3 class="mt-3 text-xl font-bold text-white group-hover:text-purple-400 transition lang-text" data-zh="【跳舞的線】青石巷" data-en="Dancing Line - The Alley">【跳舞的線】青石巷</h3>
+                            <h3 class="mt-3 text-xl font-bold text-white group-hover:text-purple-400 transition lang-text" data-zh="【跳舞的線】青石巷" data-zh-cn="【跳舞的线】青石巷" data-en="Dancing Line · The Alley" data-ja="Dancing Line · The Alley" data-ko="Dancing Line · The Alley">【跳舞的線】青石巷</h3>
                         </div>
                     </a>
                 </div>
@@ -909,7 +1364,7 @@
                         <div class="p-6">
                             
 
-                            <h3 class="mt-3 text-xl font-bold text-white group-hover:text-purple-400 transition lang-text" data-zh="【跳舞的線】春節" data-en="Dancing Line - The Spring Festival">【跳舞的線】春節</h3>
+                            <h3 class="mt-3 text-xl font-bold text-white group-hover:text-purple-400 transition lang-text" data-zh="【跳舞的線】春節" data-zh-cn="【跳舞的线】春节" data-en="Dancing Line · The Spring Festival" data-ja="Dancing Line · The Spring Festival" data-ko="Dancing Line · The Spring Festival">【跳舞的線】春節</h3>
                         </div>
                     </a>
             </div>
@@ -933,19 +1388,19 @@
                 <a href="https://space.bilibili.com/378801382" target="_blank" class="text-3xl text-cyan-500 hover:text-cyan-400 hover:scale-110 transition" title="Bilibili">
                     <i class="fa-brands fa-bilibili"></i>
                 </a>
-                <a href="https://www.mymusicfive.com/7h3F1yin97r33" target="_blank" class="text-4xl text-white-500 hover:text-white-400 hover:scale-110 transition" title="MyMusic5">
+                <a href="https://www.mymusic5.com/7h3F1yin97r33" target="_blank" rel="noopener" class="text-4xl text-white-500 hover:text-white-400 hover:scale-110 transition" title="MyMusic5">
                     <img src="https://imgproxy.mapia.io/static/mms/favicon/png/apple-icon-precomposed.png" alt="MyMusic5" class="w-8 h-8">
                 </a>
                 
                 
             </div>
-            <p class="text-slate-600 text-sm">&copy; 2025 TheFlyingTree.</p>
+            <p class="text-slate-500 text-sm">&copy; 2026 TheFlyingTree · 9th Anniversary.</p>
         </div>
     </footer>
 
 
         <!-- 看板娘 (底部固定) -->
-    <div class="fixed bottom-1 right-1 sm:right-4 md:right-10 z-40 pointer-events-none">
+    <div class="site-mascot fixed bottom-1 right-1 sm:right-4 md:right-6 z-40 pointer-events-none">
         <img src="https://cdn.jsdelivr.net/gh/Dandelion206/TheFlyingTree-Official-Website@main/site_waifu.png" 
              alt="site_waifu" 
              class="w-40 h-40 sm:w-48 h-48 md:w-64 h-64 lg:w-80 h-80 object-contain drop-shadow-[0_0_15px_rgba(255,255,255,0.5)] mascot-breath"
@@ -973,9 +1428,9 @@
         /* --- 語言切換邏輯 --- */
         const desktopSelect = document.getElementById('desktop-lang-select');
         const mobileSelect = document.getElementById('mobile-lang-select');
-        let currentLang = 'zh-tw'; // 預設繁體中文
+        let currentLang = 'zh'; // 預設繁體中文
 
-        function updateLanguage(lang) {
+        function updateLanguage(lang = currentLang) {
             currentLang = lang;
             const elements = document.querySelectorAll('.lang-text');
             elements.forEach(el => {
@@ -1041,17 +1496,17 @@
                 icon.classList.replace('fa-chevron-up', 'fa-chevron-down');
                 text.dataset.zh = "查看更多公告";
                 text.dataset.en = "Show More Announcements";
-                text.dataset['zh-cn'] = "查看更多公告";
-                text.dataset.jp = "もっと見るお知らせ";
-                text.dataset.kr = "더 많은 공지 보기";
+                text.setAttribute('data-zh-cn', "查看更多公告");
+                text.dataset.ja = "もっと見るお知らせ";
+                text.dataset.ko = "더 많은 공지 보기";
             } else {
                 // 展開
                 icon.classList.replace('fa-chevron-down', 'fa-chevron-up');
                 text.dataset.zh = "收起公告";
                 text.dataset.en = "Show Less";
-                text.dataset['zh-cn'] = "收起公告";
-                text.dataset.jp = "お知らせを閉じる";
-                text.dataset.kr = "공지 접기";
+                text.setAttribute('data-zh-cn', "收起公告");
+                text.dataset.ja = "お知らせを閉じる";
+                text.dataset.ko = "공지 접기";
             }
 
             // 觸發語言更新
@@ -1382,6 +1837,7 @@
     </script>
 </body>
 </html>
+
 
 
 
